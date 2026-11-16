@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:16
+    container_name: rbtest-pg
+    environment:
+      POSTGRES_USER: rbtest
+      POSTGRES_PASSWORD: rbtest
+      POSTGRES_DB: rbtest
+    ports:
+      - "5433:5432"
+  runner:
+    build: .
+    image: rbtest-runner
+    depends_on: [db]
+    volumes:
+      - .:/work
+    entrypoint: ["python"]

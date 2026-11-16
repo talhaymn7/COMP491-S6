@@ -1,0 +1,4 @@
+Django>=5.2,<5.3
+psycopg[binary]>=3.2
+django-migration-linter>=5.1
+hypothesis>=6.100

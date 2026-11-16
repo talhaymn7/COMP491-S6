@@ -1,0 +1,396 @@
+[
+ {
+  "scenario": "S0_safe_add_nullable",
+  "category": "control",
+  "truth": false,
+  "P_detected": false,
+  "changes": [
+   {
+    "field": "gift_message",
+    "type": "structural_add_nullable",
+    "descriptor": {
+     "blank": true,
+     "choices": null,
+     "column": "gift_message",
+     "db_default": false,
+     "max_length": null,
+     "null": true,
+     "python_default": false,
+     "regex": [],
+     "type": "TextField"
+    }
+   }
+  ],
+  "change_types": [
+   "structural_add_nullable"
+  ],
+  "new_migrations": [
+   "orders/migrations/0002_order_gift_message.py"
+  ],
+  "manifest_v1": "2a275e7c872835d4b0473f3cc659d112ebf70243efdf2e86853c26774e72a757",
+  "manifest_v2": "905305e96f250683432a72684d94776a89e7dc3a88122ea6cc7a40746d0b958b",
+  "inputs_generated": 2,
+  "why": [
+   "gift_message: new field with a value",
+   "gift_message: new field absent"
+  ],
+  "first_detecting_input": null,
+  "finding_steps": [],
+  "findings": [],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 2.14,
+  "seconds": 5.66
+ },
+ {
+  "scenario": "S1_enum_new_value",
+  "category": "value_range",
+  "truth": true,
+  "P_detected": true,
+  "changes": [
+   {
+    "field": "status",
+    "type": "value_range_choices",
+    "values": [
+     "partially_shipped"
+    ]
+   }
+  ],
+  "change_types": [
+   "value_range_choices"
+  ],
+  "new_migrations": [
+   "orders/migrations/0002_alter_order_status.py"
+  ],
+  "manifest_v1": "2a275e7c872835d4b0473f3cc659d112ebf70243efdf2e86853c26774e72a757",
+  "manifest_v2": "015fb23760f381a6ef7b44e7e2093c89c4b4f6a79aec28c93d9777e98892656c",
+  "inputs_generated": 1,
+  "why": [
+   "status: value 'partially_shipped' unknown to V1"
+  ],
+  "first_detecting_input": 1,
+  "finding_steps": [
+   "list",
+   "read"
+  ],
+  "findings": [
+   {
+    "step": "list",
+    "order_id": null,
+    "field": null,
+    "error": "KeyError: 'partially_shipped'"
+   },
+   {
+    "step": "read",
+    "order_id": 4,
+    "field": null,
+    "error": "KeyError: 'partially_shipped'"
+   }
+  ],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 1.75,
+  "seconds": 4.98
+ },
+ {
+  "scenario": "S2_nullable_address",
+  "category": "null_absent",
+  "truth": true,
+  "P_detected": true,
+  "changes": [
+   {
+    "field": "shipping_address",
+    "type": "null_absent"
+   }
+  ],
+  "change_types": [
+   "null_absent"
+  ],
+  "new_migrations": [
+   "orders/migrations/0002_alter_order_shipping_address.py"
+  ],
+  "manifest_v1": "2a275e7c872835d4b0473f3cc659d112ebf70243efdf2e86853c26774e72a757",
+  "manifest_v2": "f3d954a2ba1bb558b1fbbd43e8380017fb98d15c16917c87bb646b3435fe0153",
+  "inputs_generated": 2,
+  "why": [
+   "shipping_address: null",
+   "shipping_address: absent"
+  ],
+  "first_detecting_input": 1,
+  "finding_steps": [
+   "list",
+   "read"
+  ],
+  "findings": [
+   {
+    "step": "list",
+    "order_id": null,
+    "field": null,
+    "error": "AttributeError: 'NoneType' object has no attribute 'upper'"
+   },
+   {
+    "step": "read",
+    "order_id": 4,
+    "field": null,
+    "error": "AttributeError: 'NoneType' object has no attribute 'upper'"
+   },
+   {
+    "step": "read",
+    "order_id": 5,
+    "field": null,
+    "error": "AttributeError: 'NoneType' object has no attribute 'upper'"
+   }
+  ],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 1.76,
+  "seconds": 5.07
+ },
+ {
+  "scenario": "S3_phone_e164",
+  "category": "format_requirement",
+  "truth": true,
+  "P_detected": true,
+  "changes": [
+   {
+    "field": "phone",
+    "type": "format",
+    "v1": [
+     "^05\\d{9}$"
+    ],
+    "v2": [
+     "^\\+905\\d{9}$"
+    ]
+   }
+  ],
+  "change_types": [
+   "format"
+  ],
+  "new_migrations": [
+   "orders/migrations/0002_alter_order_phone.py"
+  ],
+  "manifest_v1": "2a275e7c872835d4b0473f3cc659d112ebf70243efdf2e86853c26774e72a757",
+  "manifest_v2": "5878406ff14fb76840132f289b61c1c4ab0d67c31f92de1bd7034a0053ac266f",
+  "inputs_generated": 1,
+  "why": [
+   "phone: V2 format '+905000000000' rejected by V1 format"
+  ],
+  "first_detecting_input": 1,
+  "finding_steps": [
+   "edit"
+  ],
+  "findings": [
+   {
+    "step": "edit",
+    "order_id": 4,
+    "field": null,
+    "error": "HTTP 400 {\"errors\": {\"phone\": [\"Telefon 05XXXXXXXXX formatinda olmali\"]}}"
+   }
+  ],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 1.88,
+  "seconds": 5.07
+ },
+ {
+  "scenario": "S4_amount_in_kurus",
+  "category": "semantic",
+  "truth": true,
+  "P_detected": false,
+  "changes": [],
+  "change_types": [],
+  "new_migrations": [],
+  "manifest_v1": "2a275e7c872835d4b0473f3cc659d112ebf70243efdf2e86853c26774e72a757",
+  "manifest_v2": "c7096ee9eb35fd95642b77ab5f4ad788f4762dd6eb2a7794a622695c5ec91080",
+  "inputs_generated": 0,
+  "why": [],
+  "first_detecting_input": null,
+  "finding_steps": [],
+  "findings": [],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 1.89,
+  "seconds": 5.13
+ },
+ {
+  "scenario": "S5_coupon_longer",
+  "category": "value_range",
+  "truth": true,
+  "P_detected": true,
+  "changes": [
+   {
+    "field": "coupon_code",
+    "type": "value_range_length",
+    "v1_max": 10,
+    "v2_max": 32
+   }
+  ],
+  "change_types": [
+   "value_range_length"
+  ],
+  "new_migrations": [
+   "orders/migrations/0002_alter_order_coupon_code.py"
+  ],
+  "manifest_v1": "2a275e7c872835d4b0473f3cc659d112ebf70243efdf2e86853c26774e72a757",
+  "manifest_v2": "5cafecaf36ea2c50534c5ff48ddf021b246fd47d14b169b6a4ad67193b26f74d",
+  "inputs_generated": 2,
+  "why": [
+   "coupon_code: length 11 > V1 limit 10",
+   "coupon_code: maximum V2 length 32"
+  ],
+  "first_detecting_input": 1,
+  "finding_steps": [
+   "edit"
+  ],
+  "findings": [
+   {
+    "step": "edit",
+    "order_id": 4,
+    "field": null,
+    "error": "HTTP 400 {\"errors\": {\"coupon_code\": [\"Ensure this value has at most 10 characters (it has 11).\"]}}"
+   },
+   {
+    "step": "edit",
+    "order_id": 5,
+    "field": null,
+    "error": "HTTP 400 {\"errors\": {\"coupon_code\": [\"Ensure this value has at most 10 characters (it has 32).\"]}}"
+   }
+  ],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 1.68,
+  "seconds": 5.03
+ },
+ {
+  "scenario": "S6_currency_not_null",
+  "category": "schema_structure",
+  "truth": true,
+  "P_detected": true,
+  "changes": [
+   {
+    "field": "currency",
+    "type": "structural_add_not_null",
+    "descriptor": {
+     "blank": false,
+     "choices": null,
+     "column": "currency",
+     "db_default": false,
+     "max_length": 3,
+     "null": false,
+     "python_default": true,
+     "regex": [],
+     "type": "CharField"
+    }
+   }
+  ],
+  "change_types": [
+   "structural_add_not_null"
+  ],
+  "new_migrations": [
+   "orders/migrations/0002_order_currency.py"
+  ],
+  "manifest_v1": "2a275e7c872835d4b0473f3cc659d112ebf70243efdf2e86853c26774e72a757",
+  "manifest_v2": "4a1c93e28f4de52f546d10a39bd2358d4473b5c0b7bc94d70ef6525eab9392d8",
+  "inputs_generated": 2,
+  "why": [
+   "currency: new field with a value",
+   "currency: new field absent"
+  ],
+  "first_detecting_input": 1,
+  "finding_steps": [
+   "create"
+  ],
+  "findings": [
+   {
+    "step": "create",
+    "order_id": null,
+    "field": null,
+    "error": "IntegrityError: null value in column \"currency\" of relation \"orders_order\" violates not-null constraint"
+   }
+  ],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 1.84,
+  "seconds": 5.12
+ },
+ {
+  "scenario": "S7_rename_note",
+  "category": "schema_structure",
+  "truth": true,
+  "P_detected": true,
+  "changes": [
+   {
+    "field": "customer_note",
+    "type": "structural_add_not_null",
+    "descriptor": {
+     "blank": true,
+     "choices": null,
+     "column": "customer_note",
+     "db_default": false,
+     "max_length": null,
+     "null": false,
+     "python_default": true,
+     "regex": [],
+     "type": "TextField"
+    }
+   },
+   {
+    "field": "note",
+    "type": "structural_remove"
+   }
+  ],
+  "change_types": [
+   "structural_add_not_null",
+   "structural_remove"
+  ],
+  "new_migrations": [
+   "orders/migrations/0002_rename_note.py"
+  ],
+  "manifest_v1": "2a275e7c872835d4b0473f3cc659d112ebf70243efdf2e86853c26774e72a757",
+  "manifest_v2": "bbebef48d084653ae7b001c8a8f216994b5e0e8175ed8d327477ff0aeb636fc4",
+  "inputs_generated": 1,
+  "why": [
+   "customer_note: new field (not in API), typical record"
+  ],
+  "first_detecting_input": 1,
+  "finding_steps": [
+   "create",
+   "list",
+   "read"
+  ],
+  "findings": [
+   {
+    "step": "list",
+    "order_id": null,
+    "field": null,
+    "error": "ProgrammingError: column orders_order.note does not exist"
+   },
+   {
+    "step": "read",
+    "order_id": 1,
+    "field": null,
+    "error": "ProgrammingError: column orders_order.note does not exist"
+   },
+   {
+    "step": "read",
+    "order_id": 2,
+    "field": null,
+    "error": "ProgrammingError: column orders_order.note does not exist"
+   },
+   {
+    "step": "read",
+    "order_id": 3,
+    "field": null,
+    "error": "ProgrammingError: column orders_order.note does not exist"
+   },
+   {
+    "step": "read",
+    "order_id": 4,
+    "field": null,
+    "error": "ProgrammingError: column orders_order.note does not exist"
+   },
+   {
+    "step": "create",
+    "order_id": null,
+    "field": null,
+    "error": "ProgrammingError: column \"note\" of relation \"orders_order\" does not exist"
+   }
+  ],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 1.44,
+  "seconds": 4.53
+ }
+]

@@ -1,0 +1,269 @@
+[
+ {
+  "scenario": "S0_safe_add_nullable",
+  "category": "control",
+  "truth": false,
+  "B_detected": false,
+  "n_findings": 0,
+  "finding_steps": [],
+  "findings": [],
+  "orders_checked": 6,
+  "inputs_rejected_by_v2": 0,
+  "tests_executed": 6,
+  "timings": {
+   "v1_seed": 1.0,
+   "v2_upgrade_and_write": 0.85,
+   "v1_rollback_probe": 0.45
+  },
+  "seconds": 4.01
+ },
+ {
+  "scenario": "S1_enum_new_value",
+  "category": "value_range",
+  "truth": true,
+  "B_detected": false,
+  "n_findings": 0,
+  "finding_steps": [],
+  "findings": [],
+  "orders_checked": 6,
+  "inputs_rejected_by_v2": 0,
+  "tests_executed": 6,
+  "timings": {
+   "v1_seed": 0.95,
+   "v2_upgrade_and_write": 0.87,
+   "v1_rollback_probe": 0.45
+  },
+  "seconds": 4.15
+ },
+ {
+  "scenario": "S2_nullable_address",
+  "category": "null_absent",
+  "truth": true,
+  "B_detected": false,
+  "n_findings": 0,
+  "finding_steps": [],
+  "findings": [],
+  "orders_checked": 6,
+  "inputs_rejected_by_v2": 0,
+  "tests_executed": 6,
+  "timings": {
+   "v1_seed": 1.04,
+   "v2_upgrade_and_write": 0.91,
+   "v1_rollback_probe": 0.46
+  },
+  "seconds": 4.09
+ },
+ {
+  "scenario": "S3_phone_e164",
+  "category": "format_requirement",
+  "truth": true,
+  "B_detected": true,
+  "n_findings": 6,
+  "finding_steps": [
+   "edit",
+   "value"
+  ],
+  "findings": [
+   {
+    "step": "value",
+    "order_id": 4,
+    "field": "phone",
+    "error": "V1 shows '+905321112233', logical value is '05321112233'"
+   },
+   {
+    "step": "edit",
+    "order_id": 4,
+    "field": null,
+    "error": "HTTP 400 {\"errors\": {\"phone\": [\"Telefon 05XXXXXXXXX formatinda olmali\"]}}"
+   },
+   {
+    "step": "value",
+    "order_id": 5,
+    "field": "phone",
+    "error": "V1 shows '+905559998877', logical value is '05559998877'"
+   },
+   {
+    "step": "edit",
+    "order_id": 5,
+    "field": null,
+    "error": "HTTP 400 {\"errors\": {\"phone\": [\"Telefon 05XXXXXXXXX formatinda olmali\"]}}"
+   },
+   {
+    "step": "value",
+    "order_id": 6,
+    "field": "phone",
+    "error": "V1 shows '+905061234567', logical value is '05061234567'"
+   },
+   {
+    "step": "edit",
+    "order_id": 6,
+    "field": null,
+    "error": "HTTP 400 {\"errors\": {\"phone\": [\"Telefon 05XXXXXXXXX formatinda olmali\"]}}"
+   }
+  ],
+  "orders_checked": 6,
+  "inputs_rejected_by_v2": 0,
+  "tests_executed": 6,
+  "timings": {
+   "v1_seed": 1.0,
+   "v2_upgrade_and_write": 0.95,
+   "v1_rollback_probe": 0.46
+  },
+  "seconds": 4.2
+ },
+ {
+  "scenario": "S4_amount_in_kurus",
+  "category": "semantic",
+  "truth": true,
+  "B_detected": true,
+  "n_findings": 3,
+  "finding_steps": [
+   "value"
+  ],
+  "findings": [
+   {
+    "step": "value",
+    "order_id": 4,
+    "field": "total_tl",
+    "error": "V1 shows 25000, logical value is 250"
+   },
+   {
+    "step": "value",
+    "order_id": 5,
+    "field": "total_tl",
+    "error": "V1 shows 120000, logical value is 1200"
+   },
+   {
+    "step": "value",
+    "order_id": 6,
+    "field": "total_tl",
+    "error": "V1 shows 7500, logical value is 75"
+   }
+  ],
+  "orders_checked": 6,
+  "inputs_rejected_by_v2": 0,
+  "tests_executed": 6,
+  "timings": {
+   "v1_seed": 1.02,
+   "v2_upgrade_and_write": 1.0,
+   "v1_rollback_probe": 0.51
+  },
+  "seconds": 4.22
+ },
+ {
+  "scenario": "S5_coupon_longer",
+  "category": "value_range",
+  "truth": true,
+  "B_detected": false,
+  "n_findings": 0,
+  "finding_steps": [],
+  "findings": [],
+  "orders_checked": 6,
+  "inputs_rejected_by_v2": 0,
+  "tests_executed": 6,
+  "timings": {
+   "v1_seed": 1.02,
+   "v2_upgrade_and_write": 0.96,
+   "v1_rollback_probe": 0.45
+  },
+  "seconds": 4.25
+ },
+ {
+  "scenario": "S6_currency_not_null",
+  "category": "schema_structure",
+  "truth": true,
+  "B_detected": true,
+  "n_findings": 1,
+  "finding_steps": [
+   "create"
+  ],
+  "findings": [
+   {
+    "step": "create",
+    "order_id": null,
+    "field": null,
+    "error": "IntegrityError: null value in column \"currency\" of relation \"orders_order\" violates not-null constraint"
+   }
+  ],
+  "orders_checked": 6,
+  "inputs_rejected_by_v2": 0,
+  "tests_executed": 6,
+  "timings": {
+   "v1_seed": 0.97,
+   "v2_upgrade_and_write": 0.89,
+   "v1_rollback_probe": 0.45
+  },
+  "seconds": 3.98
+ },
+ {
+  "scenario": "S7_rename_note",
+  "category": "schema_structure",
+  "truth": true,
+  "B_detected": true,
+  "n_findings": 8,
+  "finding_steps": [
+   "create",
+   "list",
+   "read"
+  ],
+  "findings": [
+   {
+    "step": "list",
+    "order_id": null,
+    "field": null,
+    "error": "ProgrammingError: column orders_order.note does not exist"
+   },
+   {
+    "step": "read",
+    "order_id": 1,
+    "field": null,
+    "error": "ProgrammingError: column orders_order.note does not exist"
+   },
+   {
+    "step": "read",
+    "order_id": 2,
+    "field": null,
+    "error": "ProgrammingError: column orders_order.note does not exist"
+   },
+   {
+    "step": "read",
+    "order_id": 3,
+    "field": null,
+    "error": "ProgrammingError: column orders_order.note does not exist"
+   },
+   {
+    "step": "read",
+    "order_id": 4,
+    "field": null,
+    "error": "ProgrammingError: column orders_order.note does not exist"
+   },
+   {
+    "step": "read",
+    "order_id": 5,
+    "field": null,
+    "error": "ProgrammingError: column orders_order.note does not exist"
+   },
+   {
+    "step": "read",
+    "order_id": 6,
+    "field": null,
+    "error": "ProgrammingError: column orders_order.note does not exist"
+   },
+   {
+    "step": "create",
+    "order_id": null,
+    "field": null,
+    "error": "ProgrammingError: column \"note\" of relation \"orders_order\" does not exist"
+   }
+  ],
+  "orders_checked": 6,
+  "inputs_rejected_by_v2": 0,
+  "tests_executed": 6,
+  "timings": {
+   "v1_seed": 1.03,
+   "v2_upgrade_and_write": 1.07,
+   "v1_rollback_probe": 0.44
+  },
+  "seconds": 3.75
+ }
+]

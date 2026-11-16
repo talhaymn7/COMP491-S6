@@ -1,0 +1,1348 @@
+[
+ {
+  "scenario": "S0_safe_add_nullable",
+  "category": "control",
+  "truth": false,
+  "R_detection_rate": 0.0,
+  "R_detected": false,
+  "mean_first_detecting_input": null,
+  "mean_rejected_by_v2": 0,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 7.43,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 0,
+    "seconds": 7.18,
+    "sample_finding": null
+   },
+   {
+    "seed": 2,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 0,
+    "seconds": 7.08,
+    "sample_finding": null
+   },
+   {
+    "seed": 3,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 0,
+    "seconds": 7.37,
+    "sample_finding": null
+   },
+   {
+    "seed": 4,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 0,
+    "seconds": 7.31,
+    "sample_finding": null
+   },
+   {
+    "seed": 5,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 0,
+    "seconds": 7.34,
+    "sample_finding": null
+   },
+   {
+    "seed": 6,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 0,
+    "seconds": 7.83,
+    "sample_finding": null
+   },
+   {
+    "seed": 7,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 0,
+    "seconds": 8.44,
+    "sample_finding": null
+   },
+   {
+    "seed": 8,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 0,
+    "seconds": 7.78,
+    "sample_finding": null
+   },
+   {
+    "seed": 9,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 0,
+    "seconds": 7.22,
+    "sample_finding": null
+   },
+   {
+    "seed": 10,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 0,
+    "seconds": 6.78,
+    "sample_finding": null
+   }
+  ]
+ },
+ {
+  "scenario": "S1_enum_new_value",
+  "category": "value_range",
+  "truth": true,
+  "R_detection_rate": 1.0,
+  "R_detected": true,
+  "mean_first_detecting_input": 7.3,
+  "mean_rejected_by_v2": 0,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 6.83,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": true,
+    "first_detecting_input": 8,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.21,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'partially_shipped'"
+    }
+   },
+   {
+    "seed": 2,
+    "detected": true,
+    "first_detecting_input": 7,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.79,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'partially_shipped'"
+    }
+   },
+   {
+    "seed": 3,
+    "detected": true,
+    "first_detecting_input": 18,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.35,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'partially_shipped'"
+    }
+   },
+   {
+    "seed": 4,
+    "detected": true,
+    "first_detecting_input": 6,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.23,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'partially_shipped'"
+    }
+   },
+   {
+    "seed": 5,
+    "detected": true,
+    "first_detecting_input": 4,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.62,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'partially_shipped'"
+    }
+   },
+   {
+    "seed": 6,
+    "detected": true,
+    "first_detecting_input": 4,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.54,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'partially_shipped'"
+    }
+   },
+   {
+    "seed": 7,
+    "detected": true,
+    "first_detecting_input": 4,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.62,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'partially_shipped'"
+    }
+   },
+   {
+    "seed": 8,
+    "detected": true,
+    "first_detecting_input": 7,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.27,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'partially_shipped'"
+    }
+   },
+   {
+    "seed": 9,
+    "detected": true,
+    "first_detecting_input": 10,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.02,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'partially_shipped'"
+    }
+   },
+   {
+    "seed": 10,
+    "detected": true,
+    "first_detecting_input": 5,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.7,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'partially_shipped'"
+    }
+   }
+  ]
+ },
+ {
+  "scenario": "S2_nullable_address",
+  "category": "null_absent",
+  "truth": true,
+  "R_detection_rate": 1.0,
+  "R_detected": true,
+  "mean_first_detecting_input": 1,
+  "mean_rejected_by_v2": 0,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 7.26,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.87,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "AttributeError: 'NoneType' object has no attribute 'upper'"
+    }
+   },
+   {
+    "seed": 2,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.8,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "AttributeError: 'NoneType' object has no attribute 'upper'"
+    }
+   },
+   {
+    "seed": 3,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "edit",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.16,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "AttributeError: 'NoneType' object has no attribute 'upper'"
+    }
+   },
+   {
+    "seed": 4,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "edit",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.74,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "AttributeError: 'NoneType' object has no attribute 'upper'"
+    }
+   },
+   {
+    "seed": 5,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.87,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "AttributeError: 'NoneType' object has no attribute 'upper'"
+    }
+   },
+   {
+    "seed": 6,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "edit",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.3,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "AttributeError: 'NoneType' object has no attribute 'upper'"
+    }
+   },
+   {
+    "seed": 7,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "edit",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.28,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "AttributeError: 'NoneType' object has no attribute 'upper'"
+    }
+   },
+   {
+    "seed": 8,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.74,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "AttributeError: 'NoneType' object has no attribute 'upper'"
+    }
+   },
+   {
+    "seed": 9,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "edit",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 8.39,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "AttributeError: 'NoneType' object has no attribute 'upper'"
+    }
+   },
+   {
+    "seed": 10,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 8.48,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "AttributeError: 'NoneType' object has no attribute 'upper'"
+    }
+   }
+  ]
+ },
+ {
+  "scenario": "S3_phone_e164",
+  "category": "format_requirement",
+  "truth": true,
+  "R_detection_rate": 1.0,
+  "R_detected": true,
+  "mean_first_detecting_input": 1,
+  "mean_rejected_by_v2": 0,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 7.09,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.0,
+    "sample_finding": {
+     "step": "edit",
+     "order_id": 4,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"phone\": [\"Telefon 05XXXXXXXXX formatinda olmali\"]}}"
+    }
+   },
+   {
+    "seed": 2,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.85,
+    "sample_finding": {
+     "step": "edit",
+     "order_id": 4,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"phone\": [\"Telefon 05XXXXXXXXX formatinda olmali\"]}}"
+    }
+   },
+   {
+    "seed": 3,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.05,
+    "sample_finding": {
+     "step": "edit",
+     "order_id": 4,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"phone\": [\"Telefon 05XXXXXXXXX formatinda olmali\"]}}"
+    }
+   },
+   {
+    "seed": 4,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.54,
+    "sample_finding": {
+     "step": "edit",
+     "order_id": 4,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"phone\": [\"Telefon 05XXXXXXXXX formatinda olmali\"]}}"
+    }
+   },
+   {
+    "seed": 5,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.3,
+    "sample_finding": {
+     "step": "edit",
+     "order_id": 4,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"phone\": [\"Telefon 05XXXXXXXXX formatinda olmali\"]}}"
+    }
+   },
+   {
+    "seed": 6,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.02,
+    "sample_finding": {
+     "step": "edit",
+     "order_id": 4,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"phone\": [\"Telefon 05XXXXXXXXX formatinda olmali\"]}}"
+    }
+   },
+   {
+    "seed": 7,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.72,
+    "sample_finding": {
+     "step": "edit",
+     "order_id": 4,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"phone\": [\"Telefon 05XXXXXXXXX formatinda olmali\"]}}"
+    }
+   },
+   {
+    "seed": 8,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.27,
+    "sample_finding": {
+     "step": "edit",
+     "order_id": 4,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"phone\": [\"Telefon 05XXXXXXXXX formatinda olmali\"]}}"
+    }
+   },
+   {
+    "seed": 9,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.9,
+    "sample_finding": {
+     "step": "edit",
+     "order_id": 4,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"phone\": [\"Telefon 05XXXXXXXXX formatinda olmali\"]}}"
+    }
+   },
+   {
+    "seed": 10,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.3,
+    "sample_finding": {
+     "step": "edit",
+     "order_id": 4,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"phone\": [\"Telefon 05XXXXXXXXX formatinda olmali\"]}}"
+    }
+   }
+  ]
+ },
+ {
+  "scenario": "S4_amount_in_kurus",
+  "category": "semantic",
+  "truth": true,
+  "R_detection_rate": 1.0,
+  "R_detected": true,
+  "mean_first_detecting_input": 3,
+  "mean_rejected_by_v2": 0,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 7.47,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": true,
+    "first_detecting_input": 3,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 9.01,
+    "sample_finding": {
+     "step": "value",
+     "order_id": 6,
+     "field": "total_tl",
+     "error": "V1 shows 98700, logical value is 987"
+    }
+   },
+   {
+    "seed": 2,
+    "detected": true,
+    "first_detecting_input": 3,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 8.76,
+    "sample_finding": {
+     "step": "value",
+     "order_id": 6,
+     "field": "total_tl",
+     "error": "V1 shows 4044200, logical value is 40442"
+    }
+   },
+   {
+    "seed": 3,
+    "detected": true,
+    "first_detecting_input": 3,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.45,
+    "sample_finding": {
+     "step": "value",
+     "order_id": 6,
+     "field": "total_tl",
+     "error": "V1 shows 568100, logical value is 5681"
+    }
+   },
+   {
+    "seed": 4,
+    "detected": true,
+    "first_detecting_input": 3,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.79,
+    "sample_finding": {
+     "step": "value",
+     "order_id": 6,
+     "field": "total_tl",
+     "error": "V1 shows 16000, logical value is 160"
+    }
+   },
+   {
+    "seed": 5,
+    "detected": true,
+    "first_detecting_input": 3,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.77,
+    "sample_finding": {
+     "step": "value",
+     "order_id": 6,
+     "field": "total_tl",
+     "error": "V1 shows 329400, logical value is 3294"
+    }
+   },
+   {
+    "seed": 6,
+    "detected": true,
+    "first_detecting_input": 3,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.99,
+    "sample_finding": {
+     "step": "value",
+     "order_id": 6,
+     "field": "total_tl",
+     "error": "V1 shows 142100, logical value is 1421"
+    }
+   },
+   {
+    "seed": 7,
+    "detected": true,
+    "first_detecting_input": 3,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.44,
+    "sample_finding": {
+     "step": "value",
+     "order_id": 6,
+     "field": "total_tl",
+     "error": "V1 shows 155600, logical value is 1556"
+    }
+   },
+   {
+    "seed": 8,
+    "detected": true,
+    "first_detecting_input": 3,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.61,
+    "sample_finding": {
+     "step": "value",
+     "order_id": 6,
+     "field": "total_tl",
+     "error": "V1 shows 16400, logical value is 164"
+    }
+   },
+   {
+    "seed": 9,
+    "detected": true,
+    "first_detecting_input": 3,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.77,
+    "sample_finding": {
+     "step": "value",
+     "order_id": 6,
+     "field": "total_tl",
+     "error": "V1 shows 257500, logical value is 2575"
+    }
+   },
+   {
+    "seed": 10,
+    "detected": true,
+    "first_detecting_input": 3,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.07,
+    "sample_finding": {
+     "step": "value",
+     "order_id": 6,
+     "field": "total_tl",
+     "error": "V1 shows 226000, logical value is 2260"
+    }
+   }
+  ]
+ },
+ {
+  "scenario": "S5_coupon_longer",
+  "category": "value_range",
+  "truth": true,
+  "R_detection_rate": 0.7,
+  "R_detected": true,
+  "mean_first_detecting_input": 6.7,
+  "mean_rejected_by_v2": 0,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 6.94,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": true,
+    "first_detecting_input": 5,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.88,
+    "sample_finding": {
+     "step": "edit",
+     "order_id": 8,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"coupon_code\": [\"Ensure this value has at most 10 characters (it has 18).\"]}}"
+    }
+   },
+   {
+    "seed": 2,
+    "detected": true,
+    "first_detecting_input": 4,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.87,
+    "sample_finding": {
+     "step": "edit",
+     "order_id": 7,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"coupon_code\": [\"Ensure this value has at most 10 characters (it has 11).\"]}}"
+    }
+   },
+   {
+    "seed": 3,
+    "detected": true,
+    "first_detecting_input": 9,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.68,
+    "sample_finding": {
+     "step": "edit",
+     "order_id": 12,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"coupon_code\": [\"Ensure this value has at most 10 characters (it has 20).\"]}}"
+    }
+   },
+   {
+    "seed": 4,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 0,
+    "seconds": 6.74,
+    "sample_finding": null
+   },
+   {
+    "seed": 5,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 0,
+    "seconds": 6.92,
+    "sample_finding": null
+   },
+   {
+    "seed": 6,
+    "detected": true,
+    "first_detecting_input": 5,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.31,
+    "sample_finding": {
+     "step": "edit",
+     "order_id": 8,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"coupon_code\": [\"Ensure this value has at most 10 characters (it has 13).\"]}}"
+    }
+   },
+   {
+    "seed": 7,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 0,
+    "seconds": 7.16,
+    "sample_finding": null
+   },
+   {
+    "seed": 8,
+    "detected": true,
+    "first_detecting_input": 18,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.01,
+    "sample_finding": {
+     "step": "edit",
+     "order_id": 21,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"coupon_code\": [\"Ensure this value has at most 10 characters (it has 17).\"]}}"
+    }
+   },
+   {
+    "seed": 9,
+    "detected": true,
+    "first_detecting_input": 3,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.57,
+    "sample_finding": {
+     "step": "edit",
+     "order_id": 6,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"coupon_code\": [\"Ensure this value has at most 10 characters (it has 11).\"]}}"
+    }
+   },
+   {
+    "seed": 10,
+    "detected": true,
+    "first_detecting_input": 3,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.23,
+    "sample_finding": {
+     "step": "edit",
+     "order_id": 6,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"coupon_code\": [\"Ensure this value has at most 10 characters (it has 24).\"]}}"
+    }
+   }
+  ]
+ },
+ {
+  "scenario": "S6_currency_not_null",
+  "category": "schema_structure",
+  "truth": true,
+  "R_detection_rate": 1.0,
+  "R_detected": true,
+  "mean_first_detecting_input": 1,
+  "mean_rejected_by_v2": 0,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 7.21,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.76,
+    "sample_finding": {
+     "step": "create",
+     "order_id": null,
+     "field": null,
+     "error": "IntegrityError: null value in column \"currency\" of relation \"orders_order\" violates not-null constraint"
+    }
+   },
+   {
+    "seed": 2,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.0,
+    "sample_finding": {
+     "step": "create",
+     "order_id": null,
+     "field": null,
+     "error": "IntegrityError: null value in column \"currency\" of relation \"orders_order\" violates not-null constraint"
+    }
+   },
+   {
+    "seed": 3,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.23,
+    "sample_finding": {
+     "step": "create",
+     "order_id": null,
+     "field": null,
+     "error": "IntegrityError: null value in column \"currency\" of relation \"orders_order\" violates not-null constraint"
+    }
+   },
+   {
+    "seed": 4,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.8,
+    "sample_finding": {
+     "step": "create",
+     "order_id": null,
+     "field": null,
+     "error": "IntegrityError: null value in column \"currency\" of relation \"orders_order\" violates not-null constraint"
+    }
+   },
+   {
+    "seed": 5,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.26,
+    "sample_finding": {
+     "step": "create",
+     "order_id": null,
+     "field": null,
+     "error": "IntegrityError: null value in column \"currency\" of relation \"orders_order\" violates not-null constraint"
+    }
+   },
+   {
+    "seed": 6,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.51,
+    "sample_finding": {
+     "step": "create",
+     "order_id": null,
+     "field": null,
+     "error": "IntegrityError: null value in column \"currency\" of relation \"orders_order\" violates not-null constraint"
+    }
+   },
+   {
+    "seed": 7,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.34,
+    "sample_finding": {
+     "step": "create",
+     "order_id": null,
+     "field": null,
+     "error": "IntegrityError: null value in column \"currency\" of relation \"orders_order\" violates not-null constraint"
+    }
+   },
+   {
+    "seed": 8,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.95,
+    "sample_finding": {
+     "step": "create",
+     "order_id": null,
+     "field": null,
+     "error": "IntegrityError: null value in column \"currency\" of relation \"orders_order\" violates not-null constraint"
+    }
+   },
+   {
+    "seed": 9,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.31,
+    "sample_finding": {
+     "step": "create",
+     "order_id": null,
+     "field": null,
+     "error": "IntegrityError: null value in column \"currency\" of relation \"orders_order\" violates not-null constraint"
+    }
+   },
+   {
+    "seed": 10,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.96,
+    "sample_finding": {
+     "step": "create",
+     "order_id": null,
+     "field": null,
+     "error": "IntegrityError: null value in column \"currency\" of relation \"orders_order\" violates not-null constraint"
+    }
+   }
+  ]
+ },
+ {
+  "scenario": "S7_rename_note",
+  "category": "schema_structure",
+  "truth": true,
+  "R_detection_rate": 1.0,
+  "R_detected": true,
+  "mean_first_detecting_input": 1,
+  "mean_rejected_by_v2": 0,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 6.62,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.36,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_order.note does not exist"
+    }
+   },
+   {
+    "seed": 2,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.03,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_order.note does not exist"
+    }
+   },
+   {
+    "seed": 3,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.42,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_order.note does not exist"
+    }
+   },
+   {
+    "seed": 4,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.56,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_order.note does not exist"
+    }
+   },
+   {
+    "seed": 5,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 7.28,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_order.note does not exist"
+    }
+   },
+   {
+    "seed": 6,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.48,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_order.note does not exist"
+    }
+   },
+   {
+    "seed": 7,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.58,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_order.note does not exist"
+    }
+   },
+   {
+    "seed": 8,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.26,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_order.note does not exist"
+    }
+   },
+   {
+    "seed": 9,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.25,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_order.note does not exist"
+    }
+   },
+   {
+    "seed": 10,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 5.99,
+    "sample_finding": {
+     "step": "list",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_order.note does not exist"
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,145 @@
+[
+ {
+  "scenario": "S0_safe_add_nullable",
+  "truth": false,
+  "witness_detected": false,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": []
+ },
+ {
+  "scenario": "S1_enum_new_value",
+  "truth": true,
+  "witness_detected": true,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": [
+   {
+    "step": "list",
+    "order_id": null,
+    "field": null,
+    "error": "KeyError: 'partially_shipped'"
+   },
+   {
+    "step": "read",
+    "order_id": 1,
+    "field": null,
+    "error": "KeyError: 'partially_shipped'"
+   }
+  ]
+ },
+ {
+  "scenario": "S2_nullable_address",
+  "truth": true,
+  "witness_detected": true,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": [
+   {
+    "step": "list",
+    "order_id": null,
+    "field": null,
+    "error": "AttributeError: 'NoneType' object has no attribute 'upper'"
+   },
+   {
+    "step": "read",
+    "order_id": 1,
+    "field": null,
+    "error": "AttributeError: 'NoneType' object has no attribute 'upper'"
+   }
+  ]
+ },
+ {
+  "scenario": "S3_phone_e164",
+  "truth": true,
+  "witness_detected": true,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": [
+   {
+    "step": "value",
+    "order_id": 1,
+    "field": "phone",
+    "error": "V1 shows '+905321112233', logical value is '05321112233'"
+   },
+   {
+    "step": "edit",
+    "order_id": 1,
+    "field": null,
+    "error": "HTTP 400 {\"errors\": {\"phone\": [\"Telefon 05XXXXXXXXX formatinda olmali\"]}}"
+   }
+  ]
+ },
+ {
+  "scenario": "S4_amount_in_kurus",
+  "truth": true,
+  "witness_detected": true,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": [
+   {
+    "step": "value",
+    "order_id": 1,
+    "field": "total_tl",
+    "error": "V1 shows 25000, logical value is 250"
+   }
+  ]
+ },
+ {
+  "scenario": "S5_coupon_longer",
+  "truth": true,
+  "witness_detected": true,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": [
+   {
+    "step": "edit",
+    "order_id": 1,
+    "field": null,
+    "error": "HTTP 400 {\"errors\": {\"coupon_code\": [\"Ensure this value has at most 10 characters (it has 15).\"]}}"
+   }
+  ]
+ },
+ {
+  "scenario": "S6_currency_not_null",
+  "truth": true,
+  "witness_detected": true,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": [
+   {
+    "step": "create",
+    "order_id": null,
+    "field": null,
+    "error": "IntegrityError: null value in column \"currency\" of relation \"orders_order\" violates not-null constraint"
+   }
+  ]
+ },
+ {
+  "scenario": "S7_rename_note",
+  "truth": true,
+  "witness_detected": true,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": [
+   {
+    "step": "list",
+    "order_id": null,
+    "field": null,
+    "error": "ProgrammingError: column orders_order.note does not exist"
+   },
+   {
+    "step": "read",
+    "order_id": 1,
+    "field": null,
+    "error": "ProgrammingError: column orders_order.note does not exist"
+   },
+   {
+    "step": "create",
+    "order_id": null,
+    "field": null,
+    "error": "ProgrammingError: column \"note\" of relation \"orders_order\" does not exist"
+   }
+  ]
+ }
+]
