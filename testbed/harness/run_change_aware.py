@@ -26,7 +26,7 @@ from hypothesis import strategies as st
 from common import RESULTS, V1_DIR, Timer, build_v2, manage, save
 from run_fixed import FIXED_INPUTS, rollback_cycle
 from run_random import first_detecting_input
-from scenarios import SCENARIOS
+from suite import SCENARIOS
 
 # Hand-written part of the contract: how model fields map to the create API.
 # (Method R uses the same knowledge in gen_random.py.)

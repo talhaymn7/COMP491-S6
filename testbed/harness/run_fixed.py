@@ -10,16 +10,8 @@ A scenario counts as "detected" when the probe reports at least one finding.
 import json
 
 from common import RESULTS, V1_DIR, Timer, build_v2, fresh_db, manage, save
-from scenarios import SCENARIOS
+from suite import FIXED_INPUTS, SCENARIOS  # noqa: F401 (FIXED_INPUTS re-exported)
 
-FIXED_INPUTS = [
-    {"customer_name": "Ayse Yilmaz", "phone": "05321112233", "status": "pending",
-     "shipping_address": "Talas, Kayseri", "coupon_code": "", "total_tl": 250},
-    {"customer_name": "Mehmet Demir", "phone": "05559998877", "status": "paid",
-     "shipping_address": "Cankaya, Ankara", "coupon_code": "YAZ10", "total_tl": 1200},
-    {"customer_name": "Zeynep Kaya", "phone": "05061234567", "status": "shipped",
-     "shipping_address": "Kadikoy, Istanbul", "coupon_code": "", "total_tl": 75},
-]
 
 
 def rollback_cycle(scenario, inputs_v1, inputs_v2, tag):

@@ -7,10 +7,12 @@ from pathlib import Path
 
 import psycopg
 
+from suite import APP_ROOT
+
 ROOT = Path(__file__).resolve().parent.parent
-V1_DIR = ROOT / "app_v1"
-BUILD = ROOT / "build"
-RESULTS = ROOT / "results"
+V1_DIR = APP_ROOT / "app_v1"
+BUILD = APP_ROOT / "build"
+RESULTS = APP_ROOT / "results"
 PG = dict(host="db", port=5432, user="rbtest", password="rbtest")
 
 

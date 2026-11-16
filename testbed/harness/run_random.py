@@ -13,7 +13,7 @@ import statistics
 
 from common import RESULTS, Timer, build_v2, manage, save
 from run_fixed import FIXED_INPUTS, rollback_cycle
-from scenarios import SCENARIOS
+from suite import SCENARIOS
 
 BUDGET = 20          # generated inputs per run (B uses 3 + 3)
 SEEDS = list(range(1, 11))

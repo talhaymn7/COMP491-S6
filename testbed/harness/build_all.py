@@ -1,5 +1,5 @@
 from common import build_v2
-from scenarios import SCENARIOS
+from suite import SCENARIOS
 
 if __name__ == "__main__":
     for s in SCENARIOS:

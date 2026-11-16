@@ -9,3 +9,5 @@ testbed/app_v1/_*.json
 
 # Node
 node_modules/
+testbed/ext/build/
+testbed/ext/results/work/

@@ -1,0 +1,204 @@
+[
+ {
+  "scenario": "X0_product_barcode",
+  "truth": false,
+  "witness_detected": false,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": []
+ },
+ {
+  "scenario": "X1_product_name_shorter",
+  "truth": false,
+  "witness_detected": false,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": []
+ },
+ {
+  "scenario": "X2_order_gift_wrap",
+  "truth": false,
+  "witness_detected": false,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": []
+ },
+ {
+  "scenario": "X3_category_removed",
+  "truth": false,
+  "witness_detected": false,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": []
+ },
+ {
+  "scenario": "E1_birth_year_range",
+  "truth": true,
+  "witness_detected": true,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": [
+   {
+    "step": "edit",
+    "resource": "customer",
+    "order_id": 1,
+    "field": null,
+    "error": "HTTP 400 {\"errors\": {\"birth_year\": [\"Ensure this value is less than or equal to 2010.\"]}}"
+   }
+  ]
+ },
+ {
+  "scenario": "E2_new_carrier",
+  "truth": true,
+  "witness_detected": true,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": [
+   {
+    "step": "list",
+    "resource": "shipment",
+    "order_id": null,
+    "field": null,
+    "error": "KeyError: 'ptt'"
+   },
+   {
+    "step": "read",
+    "resource": "shipment",
+    "order_id": 1,
+    "field": null,
+    "error": "KeyError: 'ptt'"
+   },
+   {
+    "step": "report",
+    "resource": null,
+    "order_id": null,
+    "field": null,
+    "error": "KeyError: 'ptt'"
+   }
+  ]
+ },
+ {
+  "scenario": "E3_price_with_vat",
+  "truth": true,
+  "witness_detected": true,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": [
+   {
+    "step": "value",
+    "resource": "product",
+    "order_id": 1,
+    "field": "price_tl",
+    "error": "V1 shows 1800, logical value is 1500"
+   }
+  ]
+ },
+ {
+  "scenario": "E4_coupon_rule_relaxed",
+  "truth": true,
+  "witness_detected": true,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": [
+   {
+    "step": "edit",
+    "resource": "order",
+    "order_id": 1,
+    "field": null,
+    "error": "HTTP 400 {\"errors\": {\"coupon_code\": [\"Kupon yalnizca 100 TL ve uzeri siparislerde kullanilabilir\"]}}"
+   }
+  ]
+ },
+ {
+  "scenario": "E5_release_category_city",
+  "truth": true,
+  "witness_detected": true,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": [
+   {
+    "step": "list",
+    "resource": "product",
+    "order_id": null,
+    "field": null,
+    "error": "KeyError: 'garden'"
+   },
+   {
+    "step": "read",
+    "resource": "product",
+    "order_id": 1,
+    "field": null,
+    "error": "KeyError: 'garden'"
+   }
+  ]
+ },
+ {
+  "scenario": "E6_sku_longer_digits",
+  "truth": true,
+  "witness_detected": true,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": [
+   {
+    "step": "edit",
+    "resource": "product",
+    "order_id": 1,
+    "field": null,
+    "error": "HTTP 400 {\"errors\": {\"sku\": [\"SKU AAA-0000 formatinda olmali\"]}}"
+   }
+  ]
+ },
+ {
+  "scenario": "E7_tracking_nullable",
+  "truth": true,
+  "witness_detected": true,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": [
+   {
+    "step": "list",
+    "resource": "shipment",
+    "order_id": null,
+    "field": null,
+    "error": "TypeError: 'NoneType' object is not subscriptable"
+   },
+   {
+    "step": "read",
+    "resource": "shipment",
+    "order_id": 1,
+    "field": null,
+    "error": "TypeError: 'NoneType' object is not subscriptable"
+   }
+  ]
+ },
+ {
+  "scenario": "E8_split_full_name",
+  "truth": true,
+  "witness_detected": true,
+  "accepted_by_v2": true,
+  "label_confirmed": true,
+  "findings": [
+   {
+    "step": "list",
+    "resource": "customer",
+    "order_id": null,
+    "field": null,
+    "error": "ProgrammingError: column orders_customer.full_name does not exist"
+   },
+   {
+    "step": "read",
+    "resource": "customer",
+    "order_id": 1,
+    "field": null,
+    "error": "ProgrammingError: column orders_customer.full_name does not exist"
+   },
+   {
+    "step": "create",
+    "resource": "customer",
+    "order_id": null,
+    "field": null,
+    "error": "ProgrammingError: column \"full_name\" of relation \"orders_customer\" does not exist"
+   }
+  ]
+ }
+]

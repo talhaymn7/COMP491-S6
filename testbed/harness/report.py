@@ -3,6 +3,7 @@ import json
 from datetime import date
 
 from common import RESULTS
+from suite import DESCRIPTION
 
 
 def load(name):
@@ -43,7 +44,7 @@ def main():
                              "R_s": r["seconds"], "R_budget": r["budget"], "R_seeds": r["seeds"]})
 
     lines = [f"# Measurement results ({date.today().isoformat()})", "",
-             "Testbed: Django 5.2 order app, PostgreSQL 16, 8 seeded V2 changes (7 rollback-incompatible, 1 safe control).",
+             DESCRIPTION,
              "Ground truth confirmed for every scenario with a witness input (results/ground_truth.json).", "",
              "## Per scenario", "",
              "| Scenario | Category | Incompatible | A1 django-migration-linter | A2 Squawk | A = A1 or A2 | B fixed-data rollback | C = A + B | B failing steps |",

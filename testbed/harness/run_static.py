@@ -11,7 +11,7 @@ import re
 import subprocess
 
 from common import Timer, build_v2, manage, save
-from scenarios import SCENARIOS
+from suite import SCENARIOS
 
 
 # Squawk rules whose documented risk is breaking existing clients / readers (data compatibility).

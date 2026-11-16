@@ -117,3 +117,28 @@ SCENARIOS = [
         "files": {"orders/migrations/0002_rename_note.py": RENAME_MIGRATION},
     },
 ]
+
+
+DESCRIPTION = ("Testbed: Django 5.2 order app, PostgreSQL 16, 8 seeded V2 changes "
+               "(7 rollback-incompatible, 1 safe control).")
+
+FIXED_INPUTS = [
+    {"customer_name": "Ayse Yilmaz", "phone": "05321112233", "status": "pending",
+     "shipping_address": "Talas, Kayseri", "coupon_code": "", "total_tl": 250},
+    {"customer_name": "Mehmet Demir", "phone": "05559998877", "status": "paid",
+     "shipping_address": "Cankaya, Ankara", "coupon_code": "YAZ10", "total_tl": 1200},
+    {"customer_name": "Zeynep Kaya", "phone": "05061234567", "status": "shipped",
+     "shipping_address": "Kadikoy, Istanbul", "coupon_code": "", "total_tl": 75},
+]
+
+BASE = dict(FIXED_INPUTS[0])
+WITNESS = {
+    "S0_safe_add_nullable": {**BASE, "gift_message": "Iyi ki dogdun"},
+    "S1_enum_new_value": {**BASE, "status": "partially_shipped"},
+    "S2_nullable_address": {**BASE, "shipping_address": None},
+    "S3_phone_e164": BASE,
+    "S4_amount_in_kurus": BASE,
+    "S5_coupon_longer": {**BASE, "coupon_code": "BLACKFRIDAY2026"},
+    "S6_currency_not_null": BASE,
+    "S7_rename_note": BASE,
+}
