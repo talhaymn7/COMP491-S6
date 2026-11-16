@@ -58,7 +58,7 @@ Deterministic: one run per scenario. Inputs are generated only for the elements 
 | S6_currency_not_null | **yes** | code_change, structural_add_not_null | 2 | 1 | **yes** | 0 | 1.9 | 6.2 |
 | S7_rename_note | **yes** | code_change, structural_add_not_null, structural_remove | 1 | 1 | **yes** | 0 | 1.3 | 5.0 |
 
-P summary: detected 7/7, false positive 0, inputs written by V2 per scenario 1-3 (total 14), mean first detecting input 1.0, total time 48 s.
+P summary: detected 7/7, false positive 0, inputs written by V2 per scenario 1-3 (total 14), mean first detecting input (detected scenarios) 1.0, total time 48 s.
 
 Ablation (P without tracking service/view code, contract fields only): detected 6/7, missed: S4_amount_in_kurus, false positive: none.
 

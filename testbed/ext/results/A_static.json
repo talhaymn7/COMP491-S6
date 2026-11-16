@@ -1,0 +1,303 @@
+[
+ {
+  "scenario": "X0_product_barcode",
+  "category": "control",
+  "truth": false,
+  "new_migration": "0002_product_barcode",
+  "django_linter_detected": false,
+  "squawk_detected": false,
+  "squawk_any_rule": true,
+  "django_linter": {
+   "errors": [],
+   "warnings": [],
+   "reasons": [],
+   "raw": "(orders, 0001_initial)... OK\n(orders, 0002_product_barcode)... OK\n*** Summary ***\nValid migrations: 2/2\nErroneous migrations: 0/2\nMigrations with warnings: 0/2\nIgnored migrations: 0/2\n"
+  },
+  "squawk": {
+   "sql": "BEGIN;\n--\n-- Add field barcode to product\n--\nALTER TABLE \"orders_product\" ADD COLUMN \"barcode\" varchar(13) NULL;\nCOMMIT;",
+   "rules": [
+    "prefer-text-field"
+   ],
+   "compat_rules": []
+  },
+  "seconds": 1.05,
+  "A_detected": false
+ },
+ {
+  "scenario": "X1_product_name_shorter",
+  "category": "control",
+  "truth": false,
+  "new_migration": "0002_alter_product_name",
+  "django_linter_detected": true,
+  "squawk_detected": true,
+  "squawk_any_rule": true,
+  "django_linter": {
+   "errors": [
+    "(orders, 0002_alter_product_name)... ERR"
+   ],
+   "warnings": [],
+   "reasons": [
+    "ALTERING columns (Could be backward compatible. You may ignore this migration.) (table: orders_product, column: name)"
+   ],
+   "raw": "(orders, 0001_initial)... OK\n(orders, 0002_alter_product_name)... ERR\n\tALTERING columns (Could be backward compatible. You may ignore this migration.) (table: orders_product, column: name)\n*** Summary ***\nValid migrations: 1/2\nErroneous migrations: 1/2\nMigrations with warnings: 0/2\nIgnored migrations: 0/2\n"
+  },
+  "squawk": {
+   "sql": "BEGIN;\n--\n-- Alter field name on product\n--\nALTER TABLE \"orders_product\" ALTER COLUMN \"name\" TYPE varchar(60);\nCOMMIT;",
+   "rules": [
+    "changing-column-type",
+    "prefer-text-field"
+   ],
+   "compat_rules": [
+    "changing-column-type"
+   ]
+  },
+  "seconds": 0.88,
+  "A_detected": true
+ },
+ {
+  "scenario": "X2_order_gift_wrap",
+  "category": "control",
+  "truth": false,
+  "new_migration": "0002_order_gift_wrap",
+  "django_linter_detected": false,
+  "squawk_detected": false,
+  "squawk_any_rule": true,
+  "django_linter": {
+   "errors": [],
+   "warnings": [],
+   "reasons": [],
+   "raw": "(orders, 0001_initial)... OK\n(orders, 0002_order_gift_wrap)... OK\n*** Summary ***\nValid migrations: 2/2\nErroneous migrations: 0/2\nMigrations with warnings: 0/2\nIgnored migrations: 0/2\n"
+  },
+  "squawk": {
+   "sql": "BEGIN;\n--\n-- Add field gift_wrap to order\n--\nALTER TABLE \"orders_order\" ADD COLUMN \"gift_wrap\" boolean DEFAULT false NOT NULL;\nCOMMIT;",
+   "rules": [
+    "adding-field-with-default"
+   ],
+   "compat_rules": []
+  },
+  "seconds": 0.86,
+  "A_detected": false
+ },
+ {
+  "scenario": "X3_category_removed",
+  "category": "control",
+  "truth": false,
+  "new_migration": "0002_alter_product_category",
+  "django_linter_detected": false,
+  "squawk_detected": false,
+  "squawk_any_rule": false,
+  "django_linter": {
+   "errors": [],
+   "warnings": [],
+   "reasons": [],
+   "raw": "(orders, 0001_initial)... OK\n(orders, 0002_alter_product_category)... OK\n*** Summary ***\nValid migrations: 2/2\nErroneous migrations: 0/2\nMigrations with warnings: 0/2\nIgnored migrations: 0/2\n"
+  },
+  "squawk": {
+   "sql": "BEGIN;\n--\n-- Alter field category on product\n--\n-- (no-op)\nCOMMIT;",
+   "rules": [],
+   "compat_rules": []
+  },
+  "seconds": 0.84,
+  "A_detected": false
+ },
+ {
+  "scenario": "E1_birth_year_range",
+  "category": "value_range",
+  "truth": true,
+  "new_migration": "0002_alter_customer_birth_year",
+  "django_linter_detected": false,
+  "squawk_detected": false,
+  "squawk_any_rule": false,
+  "django_linter": {
+   "errors": [],
+   "warnings": [],
+   "reasons": [],
+   "raw": "(orders, 0001_initial)... OK\n(orders, 0002_alter_customer_birth_year)... OK\n*** Summary ***\nValid migrations: 2/2\nErroneous migrations: 0/2\nMigrations with warnings: 0/2\nIgnored migrations: 0/2\n"
+  },
+  "squawk": {
+   "sql": "BEGIN;\n--\n-- Alter field birth_year on customer\n--\n-- (no-op)\nCOMMIT;",
+   "rules": [],
+   "compat_rules": []
+  },
+  "seconds": 0.86,
+  "A_detected": false
+ },
+ {
+  "scenario": "E2_new_carrier",
+  "category": "value_range",
+  "truth": true,
+  "new_migration": "0002_alter_shipment_carrier",
+  "django_linter_detected": false,
+  "squawk_detected": false,
+  "squawk_any_rule": false,
+  "django_linter": {
+   "errors": [],
+   "warnings": [],
+   "reasons": [],
+   "raw": "(orders, 0001_initial)... OK\n(orders, 0002_alter_shipment_carrier)... OK\n*** Summary ***\nValid migrations: 2/2\nErroneous migrations: 0/2\nMigrations with warnings: 0/2\nIgnored migrations: 0/2\n"
+  },
+  "squawk": {
+   "sql": "BEGIN;\n--\n-- Alter field carrier on shipment\n--\n-- (no-op)\nCOMMIT;",
+   "rules": [],
+   "compat_rules": []
+  },
+  "seconds": 0.86,
+  "A_detected": false
+ },
+ {
+  "scenario": "E3_price_with_vat",
+  "category": "semantic",
+  "truth": true,
+  "new_migration": null,
+  "django_linter_detected": false,
+  "squawk_detected": false,
+  "squawk_any_rule": false,
+  "django_linter": {
+   "errors": [],
+   "warnings": [],
+   "reasons": [],
+   "raw": "no new migration"
+  },
+  "squawk": {
+   "sql": "",
+   "rules": [],
+   "compat_rules": []
+  },
+  "seconds": 0.0,
+  "A_detected": false
+ },
+ {
+  "scenario": "E4_coupon_rule_relaxed",
+  "category": "business_rule",
+  "truth": true,
+  "new_migration": null,
+  "django_linter_detected": false,
+  "squawk_detected": false,
+  "squawk_any_rule": false,
+  "django_linter": {
+   "errors": [],
+   "warnings": [],
+   "reasons": [],
+   "raw": "no new migration"
+  },
+  "squawk": {
+   "sql": "",
+   "rules": [],
+   "compat_rules": []
+  },
+  "seconds": 0.0,
+  "A_detected": false
+ },
+ {
+  "scenario": "E5_release_category_city",
+  "category": "multi_change",
+  "truth": true,
+  "new_migration": "0002_alter_customer_city_alter_product_category",
+  "django_linter_detected": true,
+  "squawk_detected": true,
+  "squawk_any_rule": true,
+  "django_linter": {
+   "errors": [
+    "(orders, 0002_alter_customer_city_alter_product_category)... ERR"
+   ],
+   "warnings": [],
+   "reasons": [
+    "ALTERING columns (Could be backward compatible. You may ignore this migration.) (table: orders_customer, column: city)"
+   ],
+   "raw": "(orders, 0001_initial)... OK\n(orders, 0002_alter_customer_city_alter_product_category)... ERR\n\tALTERING columns (Could be backward compatible. You may ignore this migration.) (table: orders_customer, column: city)\n*** Summary ***\nValid migrations: 1/2\nErroneous migrations: 1/2\nMigrations with warnings: 0/2\nIgnored migrations: 0/2\n"
+  },
+  "squawk": {
+   "sql": "BEGIN;\n--\n-- Alter field city on customer\n--\nALTER TABLE \"orders_customer\" ALTER COLUMN \"city\" TYPE varchar(100);\n--\n-- Alter field category on product\n--\n-- (no-op)\nCOMMIT;",
+   "rules": [
+    "changing-column-type",
+    "prefer-text-field"
+   ],
+   "compat_rules": [
+    "changing-column-type"
+   ]
+  },
+  "seconds": 0.88,
+  "A_detected": true
+ },
+ {
+  "scenario": "E6_sku_longer_digits",
+  "category": "format_requirement",
+  "truth": true,
+  "new_migration": "0002_alter_product_sku",
+  "django_linter_detected": false,
+  "squawk_detected": false,
+  "squawk_any_rule": false,
+  "django_linter": {
+   "errors": [],
+   "warnings": [],
+   "reasons": [],
+   "raw": "(orders, 0001_initial)... OK\n(orders, 0002_alter_product_sku)... OK\n*** Summary ***\nValid migrations: 2/2\nErroneous migrations: 0/2\nMigrations with warnings: 0/2\nIgnored migrations: 0/2\n"
+  },
+  "squawk": {
+   "sql": "BEGIN;\n--\n-- Alter field sku on product\n--\n-- (no-op)\nCOMMIT;",
+   "rules": [],
+   "compat_rules": []
+  },
+  "seconds": 1.03,
+  "A_detected": false
+ },
+ {
+  "scenario": "E7_tracking_nullable",
+  "category": "null_absent",
+  "truth": true,
+  "new_migration": "0002_alter_shipment_tracking_code",
+  "django_linter_detected": false,
+  "squawk_detected": true,
+  "squawk_any_rule": true,
+  "django_linter": {
+   "errors": [],
+   "warnings": [],
+   "reasons": [],
+   "raw": "(orders, 0001_initial)... OK\n(orders, 0002_alter_shipment_tracking_code)... OK\n*** Summary ***\nValid migrations: 2/2\nErroneous migrations: 0/2\nMigrations with warnings: 0/2\nIgnored migrations: 0/2\n"
+  },
+  "squawk": {
+   "sql": "BEGIN;\n--\n-- Alter field tracking_code on shipment\n--\nALTER TABLE \"orders_shipment\" ALTER COLUMN \"tracking_code\" DROP NOT NULL;\nCOMMIT;",
+   "rules": [
+    "ban-drop-not-null"
+   ],
+   "compat_rules": [
+    "ban-drop-not-null"
+   ]
+  },
+  "seconds": 0.84,
+  "A_detected": true
+ },
+ {
+  "scenario": "E8_split_full_name",
+  "category": "schema_structure",
+  "truth": true,
+  "new_migration": "0002_remove_customer_full_name_customer_first_name_and_more",
+  "django_linter_detected": true,
+  "squawk_detected": true,
+  "squawk_any_rule": true,
+  "django_linter": {
+   "errors": [
+    "(orders, 0002_remove_customer_full_name_customer_first_name_and_more)... ERR"
+   ],
+   "warnings": [],
+   "reasons": [
+    "DROPPING columns (table: orders_customer, column: full_name)",
+    "NOT NULL constraint on columns"
+   ],
+   "raw": "(orders, 0001_initial)... OK\n(orders, 0002_remove_customer_full_name_customer_first_name_and_more)... ERR\n\tDROPPING columns (table: orders_customer, column: full_name)\n\tNOT NULL constraint on columns\n*** Summary ***\nValid migrations: 1/2\nErroneous migrations: 1/2\nMigrations with warnings: 0/2\nIgnored migrations: 0/2\n"
+  },
+  "squawk": {
+   "sql": "BEGIN;\n--\n-- Remove field full_name from customer\n--\nALTER TABLE \"orders_customer\" DROP COLUMN \"full_name\" CASCADE;\n--\n-- Add field first_name to customer\n--\nALTER TABLE \"orders_customer\" ADD COLUMN \"first_name\" varchar(50) DEFAULT '' NOT NULL;\nALTER TABLE \"orders_customer\" ALTER COLUMN \"first_name\" DROP DEFAULT;\n--\n-- Add field last_name to customer\n--\nALTER TABLE \"orders_customer\" ADD COLUMN \"last_name\" varchar(50) DEFAULT '' NOT NULL;\nALTER TABLE \"orders_customer\" ALTER COLUMN \"last_name\" DROP DEFAULT;\nCOMMIT;",
+   "rules": [
+    "adding-field-with-default",
+    "ban-drop-column",
+    "prefer-text-field"
+   ],
+   "compat_rules": [
+    "ban-drop-column"
+   ]
+  },
+  "seconds": 0.86,
+  "A_detected": true
+ }
+]

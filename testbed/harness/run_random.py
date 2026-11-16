@@ -35,9 +35,11 @@ def first_detecting_input(probe, written_v2):
         return None
     # Per-order findings identify the culprit input. A failing list endpoint is usually
     # caused by one bad stored order, so it is not treated as data-independent.
-    bad_ids = {x["order_id"] for x in f if x["order_id"] is not None}
+    # Records are identified by (resource, id); the base testbed has no resource key (None).
+    bad = {(x.get("resource"), x["order_id"]) for x in f if x["order_id"] is not None}
     for i, w in enumerate(written_v2, start=1):
-        if w["id"] in bad_ids:
+        res = w["input"].get("_resource") if any(x.get("resource") for x in f) else None
+        if (res, w["id"]) in bad:
             return i
     return 1  # only data-independent failures (create/report) or pre-upgrade data
 

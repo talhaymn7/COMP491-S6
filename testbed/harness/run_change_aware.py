@@ -32,7 +32,11 @@ from suite import SCENARIOS
 # (Method R uses the same knowledge in gen_random.py.)
 API_SKIP = {"id", "created_at", "note", "customer_note"}
 API_NAME = {"total_amount": "total_tl"}
-BASE = dict(FIXED_INPUTS[0])  # one typical, valid record
+# One typical, valid record per resource: the first fixed input of that resource.
+# (Base testbed: a single resource "order", so this is FIXED_INPUTS[0] as before.)
+BASES = {}
+for _item in FIXED_INPUTS:
+    BASES.setdefault(_item.get("_resource", "order"), dict(_item))
 CODE_ARTIFACTS = ["orders/models.py", "orders/services.py", "orders/views.py"]
 # Ablation switch: P_TRACK_CODE=0 ignores changes of service/view code (contract fields only).
 TRACK_CODE = os.environ.get("P_TRACK_CODE", "1") != "0"
@@ -123,45 +127,52 @@ def format_example(v1_patterns, v2_patterns):
 def generate(changes):
     out = []
 
-    def add(why, override=None, drop=None):
-        item = dict(BASE)
+    def add(resource, why, override=None, drop=None):
+        item = dict(BASES[resource])
         item.update(override or {})
         if drop:
             item.pop(drop, None)
         out.append({"why": why, "input": item})
 
     for c in changes:
-        f, t = c["field"], c["type"]
+        key, t = c["field"], c["type"]
+        # Field keys are "<resource>.<field>" in the extended testbed and "<field>" in the base one.
+        r, f = key.split(".", 1) if key and "." in key else ("order", key)
         name = API_NAME.get(f, f) if f else None
         in_api = f is not None and f not in API_SKIP
         if t == "value_range_choices":
             for v in c["values"]:
-                add(f"{f}: value {v!r} unknown to V1", {name: v})
+                add(r, f"{key}: value {v!r} unknown to V1", {name: v})
         elif t == "value_range_length":
-            add(f"{f}: length {c['v1_max'] + 1} > V1 limit {c['v1_max']}", {name: fill(c["v1_max"] + 1)})
-            add(f"{f}: maximum V2 length {c['v2_max']}", {name: fill(c["v2_max"])})
+            add(r, f"{key}: length {c['v1_max'] + 1} > V1 limit {c['v1_max']}", {name: fill(c["v1_max"] + 1)})
+            add(r, f"{key}: maximum V2 length {c['v2_max']}", {name: fill(c["v2_max"])})
         elif t == "null_absent":
-            add(f"{f}: null", {name: None})
-            add(f"{f}: absent", drop=name)
+            add(r, f"{key}: null", {name: None})
+            add(r, f"{key}: absent", drop=name)
         elif t == "format":
             value = format_example(c["v1"], c["v2"])
             if value is not None:
-                add(f"{f}: V2 format {value!r} rejected by V1 format", {name: value})
+                add(r, f"{key}: V2 format {value!r} rejected by V1 format", {name: value})
         elif t in ("structural_add_not_null", "structural_add_nullable"):
             if in_api:
                 d = c["descriptor"]
-                add(f"{f}: new field with a value", {name: fill(min(d["max_length"] or 8, 8))})
-                add(f"{f}: new field absent", drop=name)
+                add(r, f"{key}: new field with a value", {name: fill(min(d["max_length"] or 8, 8))})
+                add(r, f"{key}: new field absent", drop=name)
             else:
-                add(f"{f}: new field (not in API), typical record")
-        else:  # structural_remove, structural_type, other_field_change, code_change
-            add(f"{t} ({f or ', '.join(c.get('files', []))}): typical record with non-zero values")
+                add(r, f"{key}: new field (not in API), typical record")
+        elif t == "code_change":
+            # A code change cannot be mapped to a field: one typical record per resource
+            # (the base testbed has one resource, so this is one record as before).
+            for res in BASES:
+                add(res, f"code_change ({', '.join(c['files'])}): typical record with non-zero values")
+        else:  # structural_remove, structural_type, other_field_change
+            add(r, f"{t} ({key}): typical record with non-zero values")
 
     seen, unique = set(), []
     for g in out:
-        key = json.dumps(g["input"], sort_keys=True)
-        if key not in seen:
-            seen.add(key)
+        k = json.dumps(g["input"], sort_keys=True)
+        if k not in seen:
+            seen.add(k)
             unique.append(g)
     return unique
 

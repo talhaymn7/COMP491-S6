@@ -1,0 +1,1700 @@
+[
+ {
+  "scenario": "X0_product_barcode",
+  "category": "control",
+  "truth": false,
+  "R_detection_rate": 0.0,
+  "R_detected": false,
+  "mean_first_detecting_input": null,
+  "mean_rejected_by_v2": 2.8,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 6.27,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 6,
+    "seconds": 6.29,
+    "sample_finding": null
+   },
+   {
+    "seed": 2,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.38,
+    "sample_finding": null
+   },
+   {
+    "seed": 3,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 4,
+    "seconds": 6.09,
+    "sample_finding": null
+   },
+   {
+    "seed": 4,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 3,
+    "seconds": 6.4,
+    "sample_finding": null
+   },
+   {
+    "seed": 5,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 2,
+    "seconds": 6.45,
+    "sample_finding": null
+   },
+   {
+    "seed": 6,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 0,
+    "seconds": 6.35,
+    "sample_finding": null
+   },
+   {
+    "seed": 7,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.1,
+    "sample_finding": null
+   },
+   {
+    "seed": 8,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.22,
+    "sample_finding": null
+   },
+   {
+    "seed": 9,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 10,
+    "seconds": 6.1,
+    "sample_finding": null
+   },
+   {
+    "seed": 10,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 0,
+    "seconds": 6.3,
+    "sample_finding": null
+   }
+  ]
+ },
+ {
+  "scenario": "X1_product_name_shorter",
+  "category": "control",
+  "truth": false,
+  "R_detection_rate": 0.0,
+  "R_detected": false,
+  "mean_first_detecting_input": null,
+  "mean_rejected_by_v2": 3,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 6.25,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 7,
+    "seconds": 6.05,
+    "sample_finding": null
+   },
+   {
+    "seed": 2,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.37,
+    "sample_finding": null
+   },
+   {
+    "seed": 3,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.14,
+    "sample_finding": null
+   },
+   {
+    "seed": 4,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 4,
+    "seconds": 6.29,
+    "sample_finding": null
+   },
+   {
+    "seed": 5,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 4,
+    "seconds": 6.43,
+    "sample_finding": null
+   },
+   {
+    "seed": 6,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 4,
+    "seconds": 6.38,
+    "sample_finding": null
+   },
+   {
+    "seed": 7,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 3,
+    "seconds": 6.5,
+    "sample_finding": null
+   },
+   {
+    "seed": 8,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 2,
+    "seconds": 6.05,
+    "sample_finding": null
+   },
+   {
+    "seed": 9,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 5.91,
+    "sample_finding": null
+   },
+   {
+    "seed": 10,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 3,
+    "seconds": 6.4,
+    "sample_finding": null
+   }
+  ]
+ },
+ {
+  "scenario": "X2_order_gift_wrap",
+  "category": "control",
+  "truth": false,
+  "R_detection_rate": 0.0,
+  "R_detected": false,
+  "mean_first_detecting_input": null,
+  "mean_rejected_by_v2": 3.8,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 6.26,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 4,
+    "seconds": 6.14,
+    "sample_finding": null
+   },
+   {
+    "seed": 2,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.5,
+    "sample_finding": null
+   },
+   {
+    "seed": 3,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 5,
+    "seconds": 6.51,
+    "sample_finding": null
+   },
+   {
+    "seed": 4,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.48,
+    "sample_finding": null
+   },
+   {
+    "seed": 5,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 2,
+    "seconds": 6.31,
+    "sample_finding": null
+   },
+   {
+    "seed": 6,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 4,
+    "seconds": 6.13,
+    "sample_finding": null
+   },
+   {
+    "seed": 7,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 2,
+    "seconds": 5.96,
+    "sample_finding": null
+   },
+   {
+    "seed": 8,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 9,
+    "seconds": 6.37,
+    "sample_finding": null
+   },
+   {
+    "seed": 9,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 7,
+    "seconds": 6.01,
+    "sample_finding": null
+   },
+   {
+    "seed": 10,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 3,
+    "seconds": 6.16,
+    "sample_finding": null
+   }
+  ]
+ },
+ {
+  "scenario": "X3_category_removed",
+  "category": "control",
+  "truth": false,
+  "R_detection_rate": 0.0,
+  "R_detected": false,
+  "mean_first_detecting_input": null,
+  "mean_rejected_by_v2": 3,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 6.21,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 7,
+    "seconds": 6.34,
+    "sample_finding": null
+   },
+   {
+    "seed": 2,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.13,
+    "sample_finding": null
+   },
+   {
+    "seed": 3,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.28,
+    "sample_finding": null
+   },
+   {
+    "seed": 4,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 4,
+    "seconds": 6.17,
+    "sample_finding": null
+   },
+   {
+    "seed": 5,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 4,
+    "seconds": 6.19,
+    "sample_finding": null
+   },
+   {
+    "seed": 6,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 4,
+    "seconds": 6.22,
+    "sample_finding": null
+   },
+   {
+    "seed": 7,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 3,
+    "seconds": 6.05,
+    "sample_finding": null
+   },
+   {
+    "seed": 8,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 2,
+    "seconds": 6.28,
+    "sample_finding": null
+   },
+   {
+    "seed": 9,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.34,
+    "sample_finding": null
+   },
+   {
+    "seed": 10,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 3,
+    "seconds": 6.12,
+    "sample_finding": null
+   }
+  ]
+ },
+ {
+  "scenario": "E1_birth_year_range",
+  "category": "value_range",
+  "truth": true,
+  "R_detection_rate": 0.1,
+  "R_detected": false,
+  "mean_first_detecting_input": 4,
+  "mean_rejected_by_v2": 3,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 6.23,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 7,
+    "seconds": 6.42,
+    "sample_finding": null
+   },
+   {
+    "seed": 2,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.08,
+    "sample_finding": null
+   },
+   {
+    "seed": 3,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.16,
+    "sample_finding": null
+   },
+   {
+    "seed": 4,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 4,
+    "seconds": 6.36,
+    "sample_finding": null
+   },
+   {
+    "seed": 5,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 4,
+    "seconds": 6.03,
+    "sample_finding": null
+   },
+   {
+    "seed": 6,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 4,
+    "seconds": 6.31,
+    "sample_finding": null
+   },
+   {
+    "seed": 7,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 3,
+    "seconds": 6.28,
+    "sample_finding": null
+   },
+   {
+    "seed": 8,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 2,
+    "seconds": 6.21,
+    "sample_finding": null
+   },
+   {
+    "seed": 9,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.16,
+    "sample_finding": null
+   },
+   {
+    "seed": 10,
+    "detected": true,
+    "first_detecting_input": 4,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 3,
+    "seconds": 6.31,
+    "sample_finding": {
+     "step": "edit",
+     "resource": "customer",
+     "order_id": 5,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"birth_year\": [\"Ensure this value is less than or equal to 2010.\"]}}"
+    }
+   }
+  ]
+ },
+ {
+  "scenario": "E2_new_carrier",
+  "category": "value_range",
+  "truth": true,
+  "R_detection_rate": 0.4,
+  "R_detected": false,
+  "mean_first_detecting_input": 5.5,
+  "mean_rejected_by_v2": 3,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 6.55,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 7,
+    "seconds": 6.28,
+    "sample_finding": null
+   },
+   {
+    "seed": 2,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.34,
+    "sample_finding": null
+   },
+   {
+    "seed": 3,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.35,
+    "sample_finding": null
+   },
+   {
+    "seed": 4,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 4,
+    "seconds": 6.27,
+    "sample_finding": null
+   },
+   {
+    "seed": 5,
+    "detected": true,
+    "first_detecting_input": 5,
+    "finding_steps": [
+     "list",
+     "read",
+     "report"
+    ],
+    "rejected_by_v2": 4,
+    "seconds": 6.55,
+    "sample_finding": {
+     "step": "list",
+     "resource": "shipment",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'ptt'"
+    }
+   },
+   {
+    "seed": 6,
+    "detected": true,
+    "first_detecting_input": 6,
+    "finding_steps": [
+     "list",
+     "read",
+     "report"
+    ],
+    "rejected_by_v2": 4,
+    "seconds": 6.58,
+    "sample_finding": {
+     "step": "list",
+     "resource": "shipment",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'ptt'"
+    }
+   },
+   {
+    "seed": 7,
+    "detected": true,
+    "first_detecting_input": 6,
+    "finding_steps": [
+     "list",
+     "read",
+     "report"
+    ],
+    "rejected_by_v2": 3,
+    "seconds": 6.61,
+    "sample_finding": {
+     "step": "list",
+     "resource": "shipment",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'ptt'"
+    }
+   },
+   {
+    "seed": 8,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 2,
+    "seconds": 7.06,
+    "sample_finding": null
+   },
+   {
+    "seed": 9,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 7.18,
+    "sample_finding": null
+   },
+   {
+    "seed": 10,
+    "detected": true,
+    "first_detecting_input": 5,
+    "finding_steps": [
+     "list",
+     "read",
+     "report"
+    ],
+    "rejected_by_v2": 3,
+    "seconds": 6.29,
+    "sample_finding": {
+     "step": "list",
+     "resource": "shipment",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'ptt'"
+    }
+   }
+  ]
+ },
+ {
+  "scenario": "E3_price_with_vat",
+  "category": "semantic",
+  "truth": true,
+  "R_detection_rate": 1.0,
+  "R_detected": true,
+  "mean_first_detecting_input": 6.1,
+  "mean_rejected_by_v2": 3,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 6.62,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": true,
+    "first_detecting_input": 6,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 7,
+    "seconds": 6.59,
+    "sample_finding": {
+     "step": "value",
+     "resource": "product",
+     "order_id": 3,
+     "field": "price_tl",
+     "error": "V1 shows 293419, logical value is 244516"
+    }
+   },
+   {
+    "seed": 2,
+    "detected": true,
+    "first_detecting_input": 4,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 1,
+    "seconds": 6.32,
+    "sample_finding": {
+     "step": "value",
+     "resource": "product",
+     "order_id": 3,
+     "field": "price_tl",
+     "error": "V1 shows 701, logical value is 584"
+    }
+   },
+   {
+    "seed": 3,
+    "detected": true,
+    "first_detecting_input": 3,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 1,
+    "seconds": 6.59,
+    "sample_finding": {
+     "step": "value",
+     "resource": "product",
+     "order_id": 4,
+     "field": "price_tl",
+     "error": "V1 shows 1732, logical value is 1443"
+    }
+   },
+   {
+    "seed": 4,
+    "detected": true,
+    "first_detecting_input": 4,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 4,
+    "seconds": 6.35,
+    "sample_finding": {
+     "step": "value",
+     "resource": "product",
+     "order_id": 3,
+     "field": "price_tl",
+     "error": "V1 shows 1608287, logical value is 1340239"
+    }
+   },
+   {
+    "seed": 5,
+    "detected": true,
+    "first_detecting_input": 3,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 4,
+    "seconds": 6.54,
+    "sample_finding": {
+     "step": "value",
+     "resource": "product",
+     "order_id": 4,
+     "field": "price_tl",
+     "error": "V1 shows 306739, logical value is 255616"
+    }
+   },
+   {
+    "seed": 6,
+    "detected": true,
+    "first_detecting_input": 7,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 4,
+    "seconds": 6.86,
+    "sample_finding": {
+     "step": "value",
+     "resource": "product",
+     "order_id": 3,
+     "field": "price_tl",
+     "error": "V1 shows 144, logical value is 120"
+    }
+   },
+   {
+    "seed": 7,
+    "detected": true,
+    "first_detecting_input": 11,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 3,
+    "seconds": 6.65,
+    "sample_finding": {
+     "step": "value",
+     "resource": "product",
+     "order_id": 3,
+     "field": "price_tl",
+     "error": "V1 shows 270, logical value is 225"
+    }
+   },
+   {
+    "seed": 8,
+    "detected": true,
+    "first_detecting_input": 5,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 2,
+    "seconds": 7.0,
+    "sample_finding": {
+     "step": "value",
+     "resource": "product",
+     "order_id": 3,
+     "field": "price_tl",
+     "error": "V1 shows 1997356, logical value is 1664463"
+    }
+   },
+   {
+    "seed": 9,
+    "detected": true,
+    "first_detecting_input": 9,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 1,
+    "seconds": 6.69,
+    "sample_finding": {
+     "step": "value",
+     "resource": "product",
+     "order_id": 3,
+     "field": "price_tl",
+     "error": "V1 shows 1582, logical value is 1318"
+    }
+   },
+   {
+    "seed": 10,
+    "detected": true,
+    "first_detecting_input": 9,
+    "finding_steps": [
+     "value"
+    ],
+    "rejected_by_v2": 3,
+    "seconds": 6.62,
+    "sample_finding": {
+     "step": "value",
+     "resource": "product",
+     "order_id": 3,
+     "field": "price_tl",
+     "error": "V1 shows 599, logical value is 499"
+    }
+   }
+  ]
+ },
+ {
+  "scenario": "E4_coupon_rule_relaxed",
+  "category": "business_rule",
+  "truth": true,
+  "R_detection_rate": 0.3,
+  "R_detected": false,
+  "mean_first_detecting_input": 16.7,
+  "mean_rejected_by_v2": 2,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 6.81,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": true,
+    "first_detecting_input": 13,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 2,
+    "seconds": 6.78,
+    "sample_finding": {
+     "step": "edit",
+     "resource": "order",
+     "order_id": 6,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"coupon_code\": [\"Kupon yalnizca 100 TL ve uzeri siparislerde kullanilabilir\"]}}"
+    }
+   },
+   {
+    "seed": 2,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.79,
+    "sample_finding": null
+   },
+   {
+    "seed": 3,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.71,
+    "sample_finding": null
+   },
+   {
+    "seed": 4,
+    "detected": true,
+    "first_detecting_input": 18,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 1,
+    "seconds": 6.8,
+    "sample_finding": {
+     "step": "edit",
+     "resource": "order",
+     "order_id": 5,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"coupon_code\": [\"Kupon yalnizca 100 TL ve uzeri siparislerde kullanilabilir\"]}}"
+    }
+   },
+   {
+    "seed": 5,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 4,
+    "seconds": 7.08,
+    "sample_finding": null
+   },
+   {
+    "seed": 6,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 4,
+    "seconds": 6.97,
+    "sample_finding": null
+   },
+   {
+    "seed": 7,
+    "detected": true,
+    "first_detecting_input": 19,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 1,
+    "seconds": 6.32,
+    "sample_finding": {
+     "step": "edit",
+     "resource": "order",
+     "order_id": 6,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"coupon_code\": [\"Kupon yalnizca 100 TL ve uzeri siparislerde kullanilabilir\"]}}"
+    }
+   },
+   {
+    "seed": 8,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 2,
+    "seconds": 6.52,
+    "sample_finding": null
+   },
+   {
+    "seed": 9,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.72,
+    "sample_finding": null
+   },
+   {
+    "seed": 10,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 3,
+    "seconds": 7.42,
+    "sample_finding": null
+   }
+  ]
+ },
+ {
+  "scenario": "E5_release_category_city",
+  "category": "multi_change",
+  "truth": true,
+  "R_detection_rate": 0.5,
+  "R_detected": true,
+  "mean_first_detecting_input": 6.4,
+  "mean_rejected_by_v2": 3,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 7.15,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 7,
+    "seconds": 7.25,
+    "sample_finding": null
+   },
+   {
+    "seed": 2,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 7.19,
+    "sample_finding": null
+   },
+   {
+    "seed": 3,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 7.01,
+    "sample_finding": null
+   },
+   {
+    "seed": 4,
+    "detected": true,
+    "first_detecting_input": 4,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 4,
+    "seconds": 7.44,
+    "sample_finding": {
+     "step": "list",
+     "resource": "product",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'garden'"
+    }
+   },
+   {
+    "seed": 5,
+    "detected": true,
+    "first_detecting_input": 3,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 4,
+    "seconds": 7.01,
+    "sample_finding": {
+     "step": "list",
+     "resource": "product",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'garden'"
+    }
+   },
+   {
+    "seed": 6,
+    "detected": true,
+    "first_detecting_input": 11,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 4,
+    "seconds": 7.31,
+    "sample_finding": {
+     "step": "list",
+     "resource": "product",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'garden'"
+    }
+   },
+   {
+    "seed": 7,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 3,
+    "seconds": 7.35,
+    "sample_finding": null
+   },
+   {
+    "seed": 8,
+    "detected": true,
+    "first_detecting_input": 5,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 2,
+    "seconds": 7.26,
+    "sample_finding": {
+     "step": "list",
+     "resource": "product",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'garden'"
+    }
+   },
+   {
+    "seed": 9,
+    "detected": true,
+    "first_detecting_input": 9,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 1,
+    "seconds": 7.03,
+    "sample_finding": {
+     "step": "list",
+     "resource": "product",
+     "order_id": null,
+     "field": null,
+     "error": "KeyError: 'garden'"
+    }
+   },
+   {
+    "seed": 10,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 3,
+    "seconds": 6.66,
+    "sample_finding": null
+   }
+  ]
+ },
+ {
+  "scenario": "E6_sku_longer_digits",
+  "category": "format_requirement",
+  "truth": true,
+  "R_detection_rate": 0.9,
+  "R_detected": true,
+  "mean_first_detecting_input": 9.3,
+  "mean_rejected_by_v2": 3.5,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 6.31,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": true,
+    "first_detecting_input": 6,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.77,
+    "sample_finding": {
+     "step": "edit",
+     "resource": "product",
+     "order_id": 3,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"sku\": [\"SKU AAA-0000 formatinda olmali\"]}}"
+    }
+   },
+   {
+    "seed": 2,
+    "detected": true,
+    "first_detecting_input": 18,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 1,
+    "seconds": 6.8,
+    "sample_finding": {
+     "step": "edit",
+     "resource": "product",
+     "order_id": 4,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"sku\": [\"SKU AAA-0000 formatinda olmali\"]}}"
+    }
+   },
+   {
+    "seed": 3,
+    "detected": true,
+    "first_detecting_input": 9,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 1,
+    "seconds": 6.87,
+    "sample_finding": {
+     "step": "edit",
+     "resource": "product",
+     "order_id": 5,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"sku\": [\"SKU AAA-0000 formatinda olmali\"]}}"
+    }
+   },
+   {
+    "seed": 4,
+    "detected": true,
+    "first_detecting_input": 8,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 1,
+    "seconds": 6.44,
+    "sample_finding": {
+     "step": "edit",
+     "resource": "product",
+     "order_id": 4,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"sku\": [\"SKU AAA-0000 formatinda olmali\"]}}"
+    }
+   },
+   {
+    "seed": 5,
+    "detected": true,
+    "first_detecting_input": 3,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 4,
+    "seconds": 6.14,
+    "sample_finding": {
+     "step": "edit",
+     "resource": "product",
+     "order_id": 4,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"sku\": [\"SKU AAA-0000 formatinda olmali\"]}}"
+    }
+   },
+   {
+    "seed": 6,
+    "detected": true,
+    "first_detecting_input": 11,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 7,
+    "seconds": 5.9,
+    "sample_finding": {
+     "step": "edit",
+     "resource": "product",
+     "order_id": 4,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"sku\": [\"SKU AAA-0000 formatinda olmali\"]}}"
+    }
+   },
+   {
+    "seed": 7,
+    "detected": true,
+    "first_detecting_input": 11,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 1,
+    "seconds": 6.26,
+    "sample_finding": {
+     "step": "edit",
+     "resource": "product",
+     "order_id": 3,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"sku\": [\"SKU AAA-0000 formatinda olmali\"]}}"
+    }
+   },
+   {
+    "seed": 8,
+    "detected": true,
+    "first_detecting_input": 9,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 3,
+    "seconds": 6.1,
+    "sample_finding": {
+     "step": "edit",
+     "resource": "product",
+     "order_id": 4,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"sku\": [\"SKU AAA-0000 formatinda olmali\"]}}"
+    }
+   },
+   {
+    "seed": 9,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 10,
+    "seconds": 5.72,
+    "sample_finding": null
+   },
+   {
+    "seed": 10,
+    "detected": true,
+    "first_detecting_input": 9,
+    "finding_steps": [
+     "edit"
+    ],
+    "rejected_by_v2": 7,
+    "seconds": 6.08,
+    "sample_finding": {
+     "step": "edit",
+     "resource": "product",
+     "order_id": 3,
+     "field": null,
+     "error": "HTTP 400 {\"errors\": {\"sku\": [\"SKU AAA-0000 formatinda olmali\"]}}"
+    }
+   }
+  ]
+ },
+ {
+  "scenario": "E7_tracking_nullable",
+  "category": "null_absent",
+  "truth": true,
+  "R_detection_rate": 0.9,
+  "R_detected": true,
+  "mean_first_detecting_input": 5.2,
+  "mean_rejected_by_v2": 3.4,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 6.08,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": true,
+    "first_detecting_input": 2,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 8,
+    "seconds": 5.89,
+    "sample_finding": {
+     "step": "list",
+     "resource": "shipment",
+     "order_id": null,
+     "field": null,
+     "error": "TypeError: 'NoneType' object is not subscriptable"
+    }
+   },
+   {
+    "seed": 2,
+    "detected": true,
+    "first_detecting_input": 2,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 4,
+    "seconds": 6.04,
+    "sample_finding": {
+     "step": "list",
+     "resource": "shipment",
+     "order_id": null,
+     "field": null,
+     "error": "TypeError: 'NoneType' object is not subscriptable"
+    }
+   },
+   {
+    "seed": 3,
+    "detected": true,
+    "first_detecting_input": 10,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 2,
+    "seconds": 5.9,
+    "sample_finding": {
+     "step": "list",
+     "resource": "shipment",
+     "order_id": null,
+     "field": null,
+     "error": "TypeError: 'NoneType' object is not subscriptable"
+    }
+   },
+   {
+    "seed": 4,
+    "detected": true,
+    "first_detecting_input": 7,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 3,
+    "seconds": 6.22,
+    "sample_finding": {
+     "step": "list",
+     "resource": "shipment",
+     "order_id": null,
+     "field": null,
+     "error": "TypeError: 'NoneType' object is not subscriptable"
+    }
+   },
+   {
+    "seed": 5,
+    "detected": true,
+    "first_detecting_input": 10,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 5,
+    "seconds": 6.21,
+    "sample_finding": {
+     "step": "list",
+     "resource": "shipment",
+     "order_id": null,
+     "field": null,
+     "error": "TypeError: 'NoneType' object is not subscriptable"
+    }
+   },
+   {
+    "seed": 6,
+    "detected": true,
+    "first_detecting_input": 2,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 0,
+    "seconds": 6.07,
+    "sample_finding": {
+     "step": "list",
+     "resource": "shipment",
+     "order_id": null,
+     "field": null,
+     "error": "TypeError: 'NoneType' object is not subscriptable"
+    }
+   },
+   {
+    "seed": 7,
+    "detected": true,
+    "first_detecting_input": 5,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 6,
+    "seconds": 5.98,
+    "sample_finding": {
+     "step": "list",
+     "resource": "shipment",
+     "order_id": null,
+     "field": null,
+     "error": "TypeError: 'NoneType' object is not subscriptable"
+    }
+   },
+   {
+    "seed": 8,
+    "detected": true,
+    "first_detecting_input": 2,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 2,
+    "seconds": 6.23,
+    "sample_finding": {
+     "step": "list",
+     "resource": "shipment",
+     "order_id": null,
+     "field": null,
+     "error": "TypeError: 'NoneType' object is not subscriptable"
+    }
+   },
+   {
+    "seed": 9,
+    "detected": false,
+    "first_detecting_input": null,
+    "finding_steps": [],
+    "rejected_by_v2": 1,
+    "seconds": 6.01,
+    "sample_finding": null
+   },
+   {
+    "seed": 10,
+    "detected": true,
+    "first_detecting_input": 7,
+    "finding_steps": [
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 3,
+    "seconds": 6.24,
+    "sample_finding": {
+     "step": "list",
+     "resource": "shipment",
+     "order_id": null,
+     "field": null,
+     "error": "TypeError: 'NoneType' object is not subscriptable"
+    }
+   }
+  ]
+ },
+ {
+  "scenario": "E8_split_full_name",
+  "category": "schema_structure",
+  "truth": true,
+  "R_detection_rate": 1.0,
+  "R_detected": true,
+  "mean_first_detecting_input": 1,
+  "mean_rejected_by_v2": 7.4,
+  "budget": 20,
+  "seeds": 10,
+  "seconds": 6.1,
+  "runs": [
+   {
+    "seed": 1,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 2,
+    "seconds": 5.87,
+    "sample_finding": {
+     "step": "list",
+     "resource": "customer",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_customer.full_name does not exist"
+    }
+   },
+   {
+    "seed": 2,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 3,
+    "seconds": 6.36,
+    "sample_finding": {
+     "step": "list",
+     "resource": "customer",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_customer.full_name does not exist"
+    }
+   },
+   {
+    "seed": 3,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 3,
+    "seconds": 6.04,
+    "sample_finding": {
+     "step": "list",
+     "resource": "customer",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_customer.full_name does not exist"
+    }
+   },
+   {
+    "seed": 4,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 11,
+    "seconds": 5.96,
+    "sample_finding": {
+     "step": "list",
+     "resource": "customer",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_customer.full_name does not exist"
+    }
+   },
+   {
+    "seed": 5,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 10,
+    "seconds": 6.15,
+    "sample_finding": {
+     "step": "list",
+     "resource": "customer",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_customer.full_name does not exist"
+    }
+   },
+   {
+    "seed": 6,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 7,
+    "seconds": 6.64,
+    "sample_finding": {
+     "step": "list",
+     "resource": "customer",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_customer.full_name does not exist"
+    }
+   },
+   {
+    "seed": 7,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 13,
+    "seconds": 5.91,
+    "sample_finding": {
+     "step": "list",
+     "resource": "customer",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_customer.full_name does not exist"
+    }
+   },
+   {
+    "seed": 8,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 11,
+    "seconds": 6.03,
+    "sample_finding": {
+     "step": "list",
+     "resource": "customer",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_customer.full_name does not exist"
+    }
+   },
+   {
+    "seed": 9,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 10,
+    "seconds": 6.0,
+    "sample_finding": {
+     "step": "list",
+     "resource": "customer",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_customer.full_name does not exist"
+    }
+   },
+   {
+    "seed": 10,
+    "detected": true,
+    "first_detecting_input": 1,
+    "finding_steps": [
+     "create",
+     "list",
+     "read"
+    ],
+    "rejected_by_v2": 4,
+    "seconds": 6.06,
+    "sample_finding": {
+     "step": "list",
+     "resource": "customer",
+     "order_id": null,
+     "field": null,
+     "error": "ProgrammingError: column orders_customer.full_name does not exist"
+    }
+   }
+  ]
+ }
+]

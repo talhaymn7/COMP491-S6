@@ -1,0 +1,643 @@
+[
+ {
+  "scenario": "X0_product_barcode",
+  "category": "control",
+  "truth": false,
+  "P_detected": false,
+  "changes": [
+   {
+    "field": "product.barcode",
+    "type": "structural_add_nullable",
+    "descriptor": {
+     "blank": true,
+     "choices": null,
+     "column": "barcode",
+     "db_default": false,
+     "max_length": 13,
+     "null": true,
+     "python_default": false,
+     "regex": [],
+     "type": "CharField"
+    }
+   },
+   {
+    "field": null,
+    "type": "code_change",
+    "files": [
+     "orders/services.py"
+    ]
+   }
+  ],
+  "change_types": [
+   "code_change",
+   "structural_add_nullable"
+  ],
+  "new_migrations": [
+   "orders/migrations/0002_product_barcode.py"
+  ],
+  "manifest_v1": "c78f1d03ff15b2ac74b695048cf0df81a3458a9901b3c209555609f453256ab0",
+  "manifest_v2": "ba205cc8b093a8fa2a1e4f31223ca41a0113b2f079cb63ee815118a5e2a07447",
+  "inputs_generated": 5,
+  "why": [
+   "product.barcode: new field with a value",
+   "product.barcode: new field absent",
+   "code_change (orders/services.py): typical record with non-zero values",
+   "code_change (orders/services.py): typical record with non-zero values",
+   "code_change (orders/services.py): typical record with non-zero values"
+  ],
+  "first_detecting_input": null,
+  "finding_steps": [],
+  "findings": [],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 1.68,
+  "seconds": 4.89
+ },
+ {
+  "scenario": "X1_product_name_shorter",
+  "category": "control",
+  "truth": false,
+  "P_detected": false,
+  "changes": [
+   {
+    "field": "product.name",
+    "type": "other_field_change"
+   }
+  ],
+  "change_types": [
+   "other_field_change"
+  ],
+  "new_migrations": [
+   "orders/migrations/0002_alter_product_name.py"
+  ],
+  "manifest_v1": "c78f1d03ff15b2ac74b695048cf0df81a3458a9901b3c209555609f453256ab0",
+  "manifest_v2": "56d61391993f8b05159c759bb16d9b0a966e82d710501201a80c8f721db055ad",
+  "inputs_generated": 1,
+  "why": [
+   "other_field_change (product.name): typical record with non-zero values"
+  ],
+  "first_detecting_input": null,
+  "finding_steps": [],
+  "findings": [],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 1.69,
+  "seconds": 4.88
+ },
+ {
+  "scenario": "X2_order_gift_wrap",
+  "category": "control",
+  "truth": false,
+  "P_detected": false,
+  "changes": [
+   {
+    "field": "order.gift_wrap",
+    "type": "structural_add_nullable",
+    "descriptor": {
+     "blank": false,
+     "choices": null,
+     "column": "gift_wrap",
+     "db_default": true,
+     "max_length": null,
+     "null": false,
+     "python_default": true,
+     "regex": [],
+     "type": "BooleanField"
+    }
+   },
+   {
+    "field": null,
+    "type": "code_change",
+    "files": [
+     "orders/services.py"
+    ]
+   }
+  ],
+  "change_types": [
+   "code_change",
+   "structural_add_nullable"
+  ],
+  "new_migrations": [
+   "orders/migrations/0002_order_gift_wrap.py"
+  ],
+  "manifest_v1": "c78f1d03ff15b2ac74b695048cf0df81a3458a9901b3c209555609f453256ab0",
+  "manifest_v2": "b1492dd214fac1d826c10f1695946e65c462d9f131ad8341f7140c63c8d0c5d1",
+  "inputs_generated": 5,
+  "why": [
+   "order.gift_wrap: new field with a value",
+   "order.gift_wrap: new field absent",
+   "code_change (orders/services.py): typical record with non-zero values",
+   "code_change (orders/services.py): typical record with non-zero values",
+   "code_change (orders/services.py): typical record with non-zero values"
+  ],
+  "first_detecting_input": null,
+  "finding_steps": [],
+  "findings": [],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 1.71,
+  "seconds": 5.02
+ },
+ {
+  "scenario": "X3_category_removed",
+  "category": "control",
+  "truth": false,
+  "P_detected": false,
+  "changes": [
+   {
+    "field": "product.category",
+    "type": "other_field_change"
+   }
+  ],
+  "change_types": [
+   "other_field_change"
+  ],
+  "new_migrations": [
+   "orders/migrations/0002_alter_product_category.py"
+  ],
+  "manifest_v1": "c78f1d03ff15b2ac74b695048cf0df81a3458a9901b3c209555609f453256ab0",
+  "manifest_v2": "27e89ba9eb84859efad3edb683cc7fa38e2c7d804b2e4baa919c6695104a228c",
+  "inputs_generated": 1,
+  "why": [
+   "other_field_change (product.category): typical record with non-zero values"
+  ],
+  "first_detecting_input": null,
+  "finding_steps": [],
+  "findings": [],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 1.9,
+  "seconds": 5.05
+ },
+ {
+  "scenario": "E1_birth_year_range",
+  "category": "value_range",
+  "truth": true,
+  "P_detected": false,
+  "changes": [],
+  "change_types": [],
+  "new_migrations": [
+   "orders/migrations/0002_alter_customer_birth_year.py"
+  ],
+  "manifest_v1": "c78f1d03ff15b2ac74b695048cf0df81a3458a9901b3c209555609f453256ab0",
+  "manifest_v2": "4e8b51040ee7c0aa8ea0a3c359d785d8f9e0a6786e312090acbbea0049972f7b",
+  "inputs_generated": 0,
+  "why": [],
+  "first_detecting_input": null,
+  "finding_steps": [],
+  "findings": [],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 1.77,
+  "seconds": 4.98
+ },
+ {
+  "scenario": "E2_new_carrier",
+  "category": "value_range",
+  "truth": true,
+  "P_detected": true,
+  "changes": [
+   {
+    "field": "shipment.carrier",
+    "type": "value_range_choices",
+    "values": [
+     "ptt"
+    ]
+   }
+  ],
+  "change_types": [
+   "value_range_choices"
+  ],
+  "new_migrations": [
+   "orders/migrations/0002_alter_shipment_carrier.py"
+  ],
+  "manifest_v1": "c78f1d03ff15b2ac74b695048cf0df81a3458a9901b3c209555609f453256ab0",
+  "manifest_v2": "2a830be0da84a8b13fd5975dc7060a0b27e447c0676f07c3219710b6bf55b9ce",
+  "inputs_generated": 1,
+  "why": [
+   "shipment.carrier: value 'ptt' unknown to V1"
+  ],
+  "first_detecting_input": 1,
+  "finding_steps": [
+   "list",
+   "read",
+   "report"
+  ],
+  "findings": [
+   {
+    "step": "list",
+    "resource": "shipment",
+    "order_id": null,
+    "field": null,
+    "error": "KeyError: 'ptt'"
+   },
+   {
+    "step": "read",
+    "resource": "shipment",
+    "order_id": 3,
+    "field": null,
+    "error": "KeyError: 'ptt'"
+   },
+   {
+    "step": "report",
+    "resource": null,
+    "order_id": null,
+    "field": null,
+    "error": "KeyError: 'ptt'"
+   }
+  ],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 1.96,
+  "seconds": 5.1
+ },
+ {
+  "scenario": "E3_price_with_vat",
+  "category": "semantic",
+  "truth": true,
+  "P_detected": true,
+  "changes": [
+   {
+    "field": null,
+    "type": "code_change",
+    "files": [
+     "orders/services.py"
+    ]
+   }
+  ],
+  "change_types": [
+   "code_change"
+  ],
+  "new_migrations": [],
+  "manifest_v1": "c78f1d03ff15b2ac74b695048cf0df81a3458a9901b3c209555609f453256ab0",
+  "manifest_v2": "ab38e48e42ba3f439927ff7f14f0c0e7ce1313d93ba9bf3ba467c441624ad181",
+  "inputs_generated": 4,
+  "why": [
+   "code_change (orders/services.py): typical record with non-zero values",
+   "code_change (orders/services.py): typical record with non-zero values",
+   "code_change (orders/services.py): typical record with non-zero values",
+   "code_change (orders/services.py): typical record with non-zero values"
+  ],
+  "first_detecting_input": 3,
+  "finding_steps": [
+   "value"
+  ],
+  "findings": [
+   {
+    "step": "value",
+    "resource": "product",
+    "order_id": 3,
+    "field": "price_tl",
+    "error": "V1 shows 1800, logical value is 1500"
+   }
+  ],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 1.71,
+  "seconds": 4.86
+ },
+ {
+  "scenario": "E4_coupon_rule_relaxed",
+  "category": "business_rule",
+  "truth": true,
+  "P_detected": false,
+  "changes": [
+   {
+    "field": null,
+    "type": "code_change",
+    "files": [
+     "orders/services.py"
+    ]
+   }
+  ],
+  "change_types": [
+   "code_change"
+  ],
+  "new_migrations": [],
+  "manifest_v1": "c78f1d03ff15b2ac74b695048cf0df81a3458a9901b3c209555609f453256ab0",
+  "manifest_v2": "a35ec08b07344c886049b83bc08d257ab3ca8de9560384ce5d1872354ee4ef31",
+  "inputs_generated": 4,
+  "why": [
+   "code_change (orders/services.py): typical record with non-zero values",
+   "code_change (orders/services.py): typical record with non-zero values",
+   "code_change (orders/services.py): typical record with non-zero values",
+   "code_change (orders/services.py): typical record with non-zero values"
+  ],
+  "first_detecting_input": null,
+  "finding_steps": [],
+  "findings": [],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 2.04,
+  "seconds": 5.12
+ },
+ {
+  "scenario": "E5_release_category_city",
+  "category": "multi_change",
+  "truth": true,
+  "P_detected": true,
+  "changes": [
+   {
+    "field": "customer.city",
+    "type": "value_range_length",
+    "v1_max": 50,
+    "v2_max": 100
+   },
+   {
+    "field": "product.category",
+    "type": "value_range_choices",
+    "values": [
+     "garden"
+    ]
+   }
+  ],
+  "change_types": [
+   "value_range_choices",
+   "value_range_length"
+  ],
+  "new_migrations": [
+   "orders/migrations/0002_alter_customer_city_alter_product_category.py"
+  ],
+  "manifest_v1": "c78f1d03ff15b2ac74b695048cf0df81a3458a9901b3c209555609f453256ab0",
+  "manifest_v2": "f2bb04dbb316884cf554b3974207e9bd1b9e8894ace5e88bfedd62c1286641ce",
+  "inputs_generated": 3,
+  "why": [
+   "customer.city: length 51 > V1 limit 50",
+   "customer.city: maximum V2 length 100",
+   "product.category: value 'garden' unknown to V1"
+  ],
+  "first_detecting_input": 1,
+  "finding_steps": [
+   "edit",
+   "list",
+   "read"
+  ],
+  "findings": [
+   {
+    "step": "edit",
+    "resource": "customer",
+    "order_id": 3,
+    "field": null,
+    "error": "HTTP 400 {\"errors\": {\"city\": [\"Ensure this value has at most 50 characters (it has 51).\"]}}"
+   },
+   {
+    "step": "edit",
+    "resource": "customer",
+    "order_id": 4,
+    "field": null,
+    "error": "HTTP 400 {\"errors\": {\"city\": [\"Ensure this value has at most 50 characters (it has 100).\"]}}"
+   },
+   {
+    "step": "list",
+    "resource": "product",
+    "order_id": null,
+    "field": null,
+    "error": "KeyError: 'garden'"
+   },
+   {
+    "step": "read",
+    "resource": "product",
+    "order_id": 3,
+    "field": null,
+    "error": "KeyError: 'garden'"
+   }
+  ],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 1.82,
+  "seconds": 5.01
+ },
+ {
+  "scenario": "E6_sku_longer_digits",
+  "category": "format_requirement",
+  "truth": true,
+  "P_detected": true,
+  "changes": [
+   {
+    "field": "product.sku",
+    "type": "format",
+    "v1": [
+     "^[A-Z]{3}-\\d{4}$"
+    ],
+    "v2": [
+     "^[A-Z]{3}-\\d{4,6}$"
+    ]
+   }
+  ],
+  "change_types": [
+   "format"
+  ],
+  "new_migrations": [
+   "orders/migrations/0002_alter_product_sku.py"
+  ],
+  "manifest_v1": "c78f1d03ff15b2ac74b695048cf0df81a3458a9901b3c209555609f453256ab0",
+  "manifest_v2": "bce06111ba922ffaa8a09af223feaef8e6d09898964f64cd1092e8aeadb85c88",
+  "inputs_generated": 1,
+  "why": [
+   "product.sku: V2 format 'AAA-00000' rejected by V1 format"
+  ],
+  "first_detecting_input": 1,
+  "finding_steps": [
+   "edit"
+  ],
+  "findings": [
+   {
+    "step": "edit",
+    "resource": "product",
+    "order_id": 3,
+    "field": null,
+    "error": "HTTP 400 {\"errors\": {\"sku\": [\"SKU AAA-0000 formatinda olmali\"]}}"
+   }
+  ],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 2.04,
+  "seconds": 5.21
+ },
+ {
+  "scenario": "E7_tracking_nullable",
+  "category": "null_absent",
+  "truth": true,
+  "P_detected": true,
+  "changes": [
+   {
+    "field": "shipment.tracking_code",
+    "type": "null_absent"
+   },
+   {
+    "field": null,
+    "type": "code_change",
+    "files": [
+     "orders/services.py"
+    ]
+   }
+  ],
+  "change_types": [
+   "code_change",
+   "null_absent"
+  ],
+  "new_migrations": [
+   "orders/migrations/0002_alter_shipment_tracking_code.py"
+  ],
+  "manifest_v1": "c78f1d03ff15b2ac74b695048cf0df81a3458a9901b3c209555609f453256ab0",
+  "manifest_v2": "9ed346cbabac386fadb16c668d8b2c92a5b96b60c5007f8dc6bb5d63bd001a4d",
+  "inputs_generated": 6,
+  "why": [
+   "shipment.tracking_code: null",
+   "shipment.tracking_code: absent",
+   "code_change (orders/services.py): typical record with non-zero values",
+   "code_change (orders/services.py): typical record with non-zero values",
+   "code_change (orders/services.py): typical record with non-zero values",
+   "code_change (orders/services.py): typical record with non-zero values"
+  ],
+  "first_detecting_input": 1,
+  "finding_steps": [
+   "list",
+   "read"
+  ],
+  "findings": [
+   {
+    "step": "list",
+    "resource": "shipment",
+    "order_id": null,
+    "field": null,
+    "error": "TypeError: 'NoneType' object is not subscriptable"
+   },
+   {
+    "step": "read",
+    "resource": "shipment",
+    "order_id": 3,
+    "field": null,
+    "error": "TypeError: 'NoneType' object is not subscriptable"
+   },
+   {
+    "step": "read",
+    "resource": "shipment",
+    "order_id": 4,
+    "field": null,
+    "error": "TypeError: 'NoneType' object is not subscriptable"
+   }
+  ],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 1.68,
+  "seconds": 4.96
+ },
+ {
+  "scenario": "E8_split_full_name",
+  "category": "schema_structure",
+  "truth": true,
+  "P_detected": true,
+  "changes": [
+   {
+    "field": "customer.first_name",
+    "type": "structural_add_not_null",
+    "descriptor": {
+     "blank": false,
+     "choices": null,
+     "column": "first_name",
+     "db_default": false,
+     "max_length": 50,
+     "null": false,
+     "python_default": true,
+     "regex": [],
+     "type": "CharField"
+    }
+   },
+   {
+    "field": "customer.full_name",
+    "type": "structural_remove"
+   },
+   {
+    "field": "customer.last_name",
+    "type": "structural_add_not_null",
+    "descriptor": {
+     "blank": false,
+     "choices": null,
+     "column": "last_name",
+     "db_default": false,
+     "max_length": 50,
+     "null": false,
+     "python_default": true,
+     "regex": [],
+     "type": "CharField"
+    }
+   },
+   {
+    "field": null,
+    "type": "code_change",
+    "files": [
+     "orders/services.py"
+    ]
+   }
+  ],
+  "change_types": [
+   "code_change",
+   "structural_add_not_null",
+   "structural_remove"
+  ],
+  "new_migrations": [
+   "orders/migrations/0002_remove_customer_full_name_customer_first_name_and_more.py"
+  ],
+  "manifest_v1": "c78f1d03ff15b2ac74b695048cf0df81a3458a9901b3c209555609f453256ab0",
+  "manifest_v2": "c0c544bfb7527395e518a02fb53560448a8e6163c5ce414604f6cec599917218",
+  "inputs_generated": 6,
+  "why": [
+   "customer.first_name: new field with a value",
+   "customer.first_name: new field absent",
+   "customer.last_name: new field with a value",
+   "code_change (orders/services.py): typical record with non-zero values",
+   "code_change (orders/services.py): typical record with non-zero values",
+   "code_change (orders/services.py): typical record with non-zero values"
+  ],
+  "first_detecting_input": 1,
+  "finding_steps": [
+   "create",
+   "list",
+   "read"
+  ],
+  "findings": [
+   {
+    "step": "list",
+    "resource": "customer",
+    "order_id": null,
+    "field": null,
+    "error": "ProgrammingError: column orders_customer.full_name does not exist"
+   },
+   {
+    "step": "read",
+    "resource": "customer",
+    "order_id": 1,
+    "field": null,
+    "error": "ProgrammingError: column orders_customer.full_name does not exist"
+   },
+   {
+    "step": "read",
+    "resource": "customer",
+    "order_id": 2,
+    "field": null,
+    "error": "ProgrammingError: column orders_customer.full_name does not exist"
+   },
+   {
+    "step": "read",
+    "resource": "customer",
+    "order_id": 3,
+    "field": null,
+    "error": "ProgrammingError: column orders_customer.full_name does not exist"
+   },
+   {
+    "step": "read",
+    "resource": "customer",
+    "order_id": 4,
+    "field": null,
+    "error": "ProgrammingError: column orders_customer.full_name does not exist"
+   },
+   {
+    "step": "read",
+    "resource": "customer",
+    "order_id": 5,
+    "field": null,
+    "error": "ProgrammingError: column orders_customer.full_name does not exist"
+   },
+   {
+    "step": "create",
+    "resource": "customer",
+    "order_id": null,
+    "field": null,
+    "error": "ProgrammingError: column \"full_name\" of relation \"orders_customer\" does not exist"
+   }
+  ],
+  "rejected_by_v2": 0,
+  "seconds_analysis": 1.6,
+  "seconds": 4.69
+ }
+]

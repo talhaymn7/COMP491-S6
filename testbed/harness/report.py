@@ -3,7 +3,7 @@ import json
 from datetime import date
 
 from common import RESULTS
-from suite import DESCRIPTION
+from suite import DESCRIPTION, FIXED_INPUTS
 
 
 def load(name):
@@ -104,7 +104,8 @@ def main():
                   f"inputs written by V2 per scenario {min(p['inputs_generated'] for p in P.values())}-"
                   f"{max(p['inputs_generated'] for p in P.values())} "
                   f"(total {sum(p['inputs_generated'] for p in P.values())}), "
-                  f"mean first detecting input {sum(p['first_detecting_input'] for p in inc) / len(inc):.1f}, "
+                  f"mean first detecting input (detected scenarios) "
+                  f"{sum(p['first_detecting_input'] for p in inc if p['P_detected']) / max(1, sum(1 for p in inc if p['P_detected'])):.1f}, "
                   f"total time {sum(p['seconds'] for p in P.values()):.0f} s."]
         if PN:
             missed = [s for s, p in PN.items() if p["truth"] and not p["P_detected"]]
@@ -118,8 +119,8 @@ def main():
                   "|---|---|---|---|---|---|"]
         tA = sum(r["A_s"] for r in rows); tB = sum(r["B_s"] for r in rows)
         for key, label, inputs, det, t in [
-            ("A", "A static", "0 (no run)", "yes", tA), ("B", "B fixed data", "3", "yes", tB),
-            ("C", "C = A + B", "3", "yes", tA + tB),
+            ("A", "A static", "0 (no run)", "yes", tA), ("B", "B fixed data", str(len(FIXED_INPUTS)), "yes", tB),
+            ("C", "C = A + B", str(len(FIXED_INPUTS)), "yes", tA + tB),
             ("R", f"R random ({r0['R_budget']} inputs x {r0['R_seeds']} seeds)", str(r0["R_budget"]), "no",
              sum(r["R_s"] * r["R_seeds"] for r in rows) if R else 0),
             ("P", "P change-aware", f"{min(p['inputs_generated'] for p in P.values())}-"
