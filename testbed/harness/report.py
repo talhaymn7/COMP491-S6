@@ -114,19 +114,42 @@ def main():
                       f"detected {sum(1 for p in PN.values() if p['truth'] and p['P_detected'])}/{pos}, "
                       f"missed: {', '.join(missed) or 'none'}, false positive: {', '.join(fpn) or 'none'}."]
 
+        BD = load("Bdtm_django_test_migrations.json") if (RESULTS / "Bdtm_django_test_migrations.json").exists() else {}
+        if BD:
+            lines += ["", "## Method B': django-test-migrations (existing tool, used as designed)", "",
+                      "Same fixed data as B; forward migration, then reverse migration (schema rollback), "
+                      "rows checked with the V1 historical models. Application code is not executed.", "",
+                      "| Scenario | Incompatible | Detected | Failing steps | Note |", "|---|---|---|---|---|"]
+            for r in rows:
+                b = BD[r["scenario"]]
+                r["BD"] = b["Bdtm_detected"]
+                lines.append(f"| {r['scenario']} | {yn(r['truth'])} | {yn(b['Bdtm_detected'])} | "
+                             f"{', '.join(b['finding_steps']) or '-'} | {b['not_applicable'] or ''} |")
+            tp, fn, fp, pos = metrics(rows, "BD")
+            lines += ["", f"B' summary: detected {tp}/{pos}, false positive {fp}, "
+                      f"total time {sum(b['seconds'] for b in BD.values()):.0f} s."]
+            if (RESULTS / "Bdtm_witness_sanity.json").exists():
+                W = load("Bdtm_witness_sanity.json")
+                hit = sorted(s for s, w in W.items() if w["truth"] and w["Bdtm_detected"])
+                fpw = sorted(s for s, w in W.items() if not w["truth"] and w["Bdtm_detected"])
+                lines += ["", "Sanity check (witness input added to the V2 data, not a method result): "
+                          f"detected {len(hit)}/{pos} ({', '.join(hit)}), false positive: {', '.join(fpw) or 'none'}."]
+
         lines += ["", "## Comparison of all methods", "",
                   "| Method | Detected | False positive | Inputs written by V2 per scenario | Deterministic | Total time (s) |",
                   "|---|---|---|---|---|---|"]
         tA = sum(r["A_s"] for r in rows); tB = sum(r["B_s"] for r in rows)
         for key, label, inputs, det, t in [
             ("A", "A static", "0 (no run)", "yes", tA), ("B", "B fixed data", str(len(FIXED_INPUTS)), "yes", tB),
+            ("BD", "B' django-test-migrations", str(len(FIXED_INPUTS)), "yes",
+             sum(b["seconds"] for b in BD.values()) if BD else 0),
             ("C", "C = A + B", str(len(FIXED_INPUTS)), "yes", tA + tB),
             ("R", f"R random ({r0['R_budget']} inputs x {r0['R_seeds']} seeds)", str(r0["R_budget"]), "no",
              sum(r["R_s"] * r["R_seeds"] for r in rows) if R else 0),
             ("P", "P change-aware", f"{min(p['inputs_generated'] for p in P.values())}-"
              f"{max(p['inputs_generated'] for p in P.values())}", "yes", sum(p["seconds"] for p in P.values())),
         ]:
-            if key == "R" and not R:
+            if (key == "R" and not R) or (key == "BD" and not BD):
                 continue
             tp, fn, fp, pos = metrics(rows, key)
             lines.append(f"| {label} | {tp}/{pos} | {fp} | {inputs} | {det} | {t:.0f} |")

@@ -1,0 +1,112 @@
+[
+ {
+  "scenario": "S0_safe_add_nullable",
+  "category": "control",
+  "truth": false,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 3.75
+ },
+ {
+  "scenario": "S1_enum_new_value",
+  "category": "value_range",
+  "truth": true,
+  "Bdtm_detected": true,
+  "not_applicable": null,
+  "finding_steps": [
+   "validation"
+  ],
+  "findings": [
+   {
+    "step": "validation",
+    "resource": "order",
+    "order_id": 7,
+    "field": null,
+    "error": "{'status': [\"Value 'partially_shipped' is not a valid choice.\"]}"
+   }
+  ],
+  "seconds": 3.64
+ },
+ {
+  "scenario": "S2_nullable_address",
+  "category": "null_absent",
+  "truth": true,
+  "Bdtm_detected": true,
+  "not_applicable": null,
+  "finding_steps": [
+   "reverse_migration"
+  ],
+  "findings": [
+   {
+    "step": "reverse_migration",
+    "resource": null,
+    "order_id": null,
+    "field": null,
+    "error": "IntegrityError: column \"shipping_address\" of relation \"orders_order\" contains null values"
+   }
+  ],
+  "seconds": 3.52
+ },
+ {
+  "scenario": "S3_phone_e164",
+  "category": "format_requirement",
+  "truth": true,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 2.95
+ },
+ {
+  "scenario": "S4_amount_in_kurus",
+  "category": "semantic",
+  "truth": true,
+  "Bdtm_detected": false,
+  "not_applicable": "no new migration",
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 1.4
+ },
+ {
+  "scenario": "S5_coupon_longer",
+  "category": "value_range",
+  "truth": true,
+  "Bdtm_detected": true,
+  "not_applicable": null,
+  "finding_steps": [
+   "reverse_migration"
+  ],
+  "findings": [
+   {
+    "step": "reverse_migration",
+    "resource": null,
+    "order_id": null,
+    "field": null,
+    "error": "DataError: value too long for type character varying(10)"
+   }
+  ],
+  "seconds": 2.94
+ },
+ {
+  "scenario": "S6_currency_not_null",
+  "category": "schema_structure",
+  "truth": true,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 2.91
+ },
+ {
+  "scenario": "S7_rename_note",
+  "category": "schema_structure",
+  "truth": true,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 2.44
+ }
+]

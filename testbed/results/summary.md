@@ -1,4 +1,4 @@
-# Measurement results (2026-11-16)
+# Measurement results (2026-11-17)
 
 Testbed: Django 5.2 order app, PostgreSQL 16, 8 seeded V2 changes (7 rollback-incompatible, 1 safe control).
 Ground truth confirmed for every scenario with a witness input (results/ground_truth.json).
@@ -62,12 +62,32 @@ P summary: detected 7/7, false positive 0, inputs written by V2 per scenario 1-3
 
 Ablation (P without tracking service/view code, contract fields only): detected 6/7, missed: S4_amount_in_kurus, false positive: none.
 
+## Method B': django-test-migrations (existing tool, used as designed)
+
+Same fixed data as B; forward migration, then reverse migration (schema rollback), rows checked with the V1 historical models. Application code is not executed.
+
+| Scenario | Incompatible | Detected | Failing steps | Note |
+|---|---|---|---|---|
+| S0_safe_add_nullable | no | no | - |  |
+| S1_enum_new_value | **yes** | no | - |  |
+| S2_nullable_address | **yes** | no | - |  |
+| S3_phone_e164 | **yes** | no | - |  |
+| S4_amount_in_kurus | **yes** | no | - | no new migration |
+| S5_coupon_longer | **yes** | no | - |  |
+| S6_currency_not_null | **yes** | no | - |  |
+| S7_rename_note | **yes** | no | - |  |
+
+B' summary: detected 0/7, false positive 0, total time 36 s.
+
+Sanity check (witness input added to the V2 data, not a method result): detected 3/7 (S1_enum_new_value, S2_nullable_address, S5_coupon_longer), false positive: none.
+
 ## Comparison of all methods
 
 | Method | Detected | False positive | Inputs written by V2 per scenario | Deterministic | Total time (s) |
 |---|---|---|---|---|---|
 | A static | 4/7 | 0 | 0 (no run) | yes | 7 |
 | B fixed data | 4/7 | 0 | 3 | yes | 33 |
+| B' django-test-migrations | 0/7 | 0 | 3 | yes | 36 |
 | C = A + B | 6/7 | 0 | 3 | yes | 40 |
 | R random (20 inputs x 10 seeds) | 7/7 | 0 | 20 | no | 568 |
 | P change-aware | 7/7 | 0 | 1-3 | yes | 48 |

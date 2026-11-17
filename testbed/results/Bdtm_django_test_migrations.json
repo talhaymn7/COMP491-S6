@@ -1,0 +1,82 @@
+[
+ {
+  "scenario": "S0_safe_add_nullable",
+  "category": "control",
+  "truth": false,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 12.43
+ },
+ {
+  "scenario": "S1_enum_new_value",
+  "category": "value_range",
+  "truth": true,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 3.62
+ },
+ {
+  "scenario": "S2_nullable_address",
+  "category": "null_absent",
+  "truth": true,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 3.68
+ },
+ {
+  "scenario": "S3_phone_e164",
+  "category": "format_requirement",
+  "truth": true,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 3.68
+ },
+ {
+  "scenario": "S4_amount_in_kurus",
+  "category": "semantic",
+  "truth": true,
+  "Bdtm_detected": false,
+  "not_applicable": "no new migration",
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 1.38
+ },
+ {
+  "scenario": "S5_coupon_longer",
+  "category": "value_range",
+  "truth": true,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 3.83
+ },
+ {
+  "scenario": "S6_currency_not_null",
+  "category": "schema_structure",
+  "truth": true,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 3.84
+ },
+ {
+  "scenario": "S7_rename_note",
+  "category": "schema_structure",
+  "truth": true,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 3.21
+ }
+]

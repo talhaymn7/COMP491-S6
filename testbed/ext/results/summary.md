@@ -1,4 +1,4 @@
-# Measurement results (2026-11-16)
+# Measurement results (2026-11-17)
 
 Extended testbed: Django 5.2 app with 4 resources (order, customer, product, shipment), about 30 fields, PostgreSQL 16, 12 seeded V2 changes (8 rollback-incompatible, 4 safe controls).
 Ground truth confirmed for every scenario with a witness input (results/ground_truth.json).
@@ -74,12 +74,36 @@ P summary: detected 6/8, false positive 0, inputs written by V2 per scenario 0-6
 
 Ablation (P without tracking service/view code, contract fields only): detected 5/8, missed: E1_birth_year_range, E3_price_with_vat, E4_coupon_rule_relaxed, false positive: none.
 
+## Method B': django-test-migrations (existing tool, used as designed)
+
+Same fixed data as B; forward migration, then reverse migration (schema rollback), rows checked with the V1 historical models. Application code is not executed.
+
+| Scenario | Incompatible | Detected | Failing steps | Note |
+|---|---|---|---|---|
+| X0_product_barcode | no | no | - |  |
+| X1_product_name_shorter | no | no | - |  |
+| X2_order_gift_wrap | no | no | - |  |
+| X3_category_removed | no | no | - |  |
+| E1_birth_year_range | **yes** | no | - |  |
+| E2_new_carrier | **yes** | no | - |  |
+| E3_price_with_vat | **yes** | no | - | no new migration |
+| E4_coupon_rule_relaxed | **yes** | no | - | no new migration |
+| E5_release_category_city | **yes** | no | - |  |
+| E6_sku_longer_digits | **yes** | no | - |  |
+| E7_tracking_nullable | **yes** | no | - |  |
+| E8_split_full_name | **yes** | **yes** | reverse_migration |  |
+
+B' summary: detected 1/8, false positive 0, total time 46 s.
+
+Sanity check (witness input added to the V2 data, not a method result): detected 6/8 (E1_birth_year_range, E2_new_carrier, E5_release_category_city, E6_sku_longer_digits, E7_tracking_nullable, E8_split_full_name), false positive: none.
+
 ## Comparison of all methods
 
 | Method | Detected | False positive | Inputs written by V2 per scenario | Deterministic | Total time (s) |
 |---|---|---|---|---|---|
 | A static | 3/8 | 1 | 0 (no run) | yes | 9 |
 | B fixed data | 2/8 | 0 | 8 | yes | 42 |
+| B' django-test-migrations | 1/8 | 0 | 8 | yes | 46 |
 | C = A + B | 4/8 | 1 | 8 | yes | 51 |
 | R random (20 inputs x 10 seeds) | 5/8 | 0 | 20 | no | 768 |
 | P change-aware | 6/8 | 0 | 0-6 | yes | 60 |

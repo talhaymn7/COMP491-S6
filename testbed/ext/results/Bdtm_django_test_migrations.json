@@ -1,0 +1,132 @@
+[
+ {
+  "scenario": "X0_product_barcode",
+  "category": "control",
+  "truth": false,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 6.26
+ },
+ {
+  "scenario": "X1_product_name_shorter",
+  "category": "control",
+  "truth": false,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 4.31
+ },
+ {
+  "scenario": "X2_order_gift_wrap",
+  "category": "control",
+  "truth": false,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 3.95
+ },
+ {
+  "scenario": "X3_category_removed",
+  "category": "control",
+  "truth": false,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 4.09
+ },
+ {
+  "scenario": "E1_birth_year_range",
+  "category": "value_range",
+  "truth": true,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 4.29
+ },
+ {
+  "scenario": "E2_new_carrier",
+  "category": "value_range",
+  "truth": true,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 3.83
+ },
+ {
+  "scenario": "E3_price_with_vat",
+  "category": "semantic",
+  "truth": true,
+  "Bdtm_detected": false,
+  "not_applicable": "no new migration",
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 1.66
+ },
+ {
+  "scenario": "E4_coupon_rule_relaxed",
+  "category": "business_rule",
+  "truth": true,
+  "Bdtm_detected": false,
+  "not_applicable": "no new migration",
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 1.59
+ },
+ {
+  "scenario": "E5_release_category_city",
+  "category": "multi_change",
+  "truth": true,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 3.94
+ },
+ {
+  "scenario": "E6_sku_longer_digits",
+  "category": "format_requirement",
+  "truth": true,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 4.0
+ },
+ {
+  "scenario": "E7_tracking_nullable",
+  "category": "null_absent",
+  "truth": true,
+  "Bdtm_detected": false,
+  "not_applicable": null,
+  "finding_steps": [],
+  "findings": [],
+  "seconds": 3.79
+ },
+ {
+  "scenario": "E8_split_full_name",
+  "category": "schema_structure",
+  "truth": true,
+  "Bdtm_detected": true,
+  "not_applicable": null,
+  "finding_steps": [
+   "reverse_migration"
+  ],
+  "findings": [
+   {
+    "step": "reverse_migration",
+    "resource": null,
+    "order_id": null,
+    "field": null,
+    "error": "IntegrityError: column \"full_name\" of relation \"orders_customer\" contains null values"
+   }
+  ],
+  "seconds": 3.84
+ }
+]
