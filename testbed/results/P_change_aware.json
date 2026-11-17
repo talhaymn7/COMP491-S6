@@ -37,6 +37,32 @@
   ],
   "manifest_v1": "2a275e7c872835d4b0473f3cc659d112ebf70243efdf2e86853c26774e72a757",
   "manifest_v2": "905305e96f250683432a72684d94776a89e7dc3a88122ea6cc7a40746d0b958b",
+  "integrity": {
+   "leaves_v1": 13,
+   "leaves_v2": 15,
+   "root_v1": "06da8d3e9bc4905207e174036467f98e5afbf449a0103fd5916232a33b6c4338",
+   "root_v2": "e928dc5c83838bfa8673e05d9b4a5839fc7a1d4e1a137fcc67ab502368804d8c",
+   "changed_leaves": [
+    "artifact:orders/migrations/0002_order_gift_message.py",
+    "artifact:orders/models.py",
+    "artifact:orders/services.py",
+    "field:gift_message"
+   ],
+   "removed_leaves": [],
+   "proof_hashes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "proofs_verified": true,
+   "tamper": {
+    "modified_manifest_rejected": true,
+    "modified_signature_rejected": true
+   },
+   "ms_sign": 0.35,
+   "ms_verify": 0.27
+  },
   "inputs_generated": 2,
   "why": [
    "gift_message: new field with a value",
@@ -46,8 +72,8 @@
   "finding_steps": [],
   "findings": [],
   "rejected_by_v2": 0,
-  "seconds_analysis": 2.0,
-  "seconds": 6.23
+  "seconds_analysis": 2.48,
+  "seconds": 7.3
  },
  {
   "scenario": "S1_enum_new_value",
@@ -71,6 +97,30 @@
   ],
   "manifest_v1": "2a275e7c872835d4b0473f3cc659d112ebf70243efdf2e86853c26774e72a757",
   "manifest_v2": "015fb23760f381a6ef7b44e7e2093c89c4b4f6a79aec28c93d9777e98892656c",
+  "integrity": {
+   "leaves_v1": 13,
+   "leaves_v2": 14,
+   "root_v1": "06da8d3e9bc4905207e174036467f98e5afbf449a0103fd5916232a33b6c4338",
+   "root_v2": "9b065a76905e550285bbb71acb7aadb2ad4037b5dda11948d97e19f28f8abd11",
+   "changed_leaves": [
+    "artifact:orders/migrations/0002_alter_order_status.py",
+    "artifact:orders/models.py",
+    "field:status"
+   ],
+   "removed_leaves": [],
+   "proof_hashes": [
+    4,
+    4,
+    3
+   ],
+   "proofs_verified": true,
+   "tamper": {
+    "modified_manifest_rejected": true,
+    "modified_signature_rejected": true
+   },
+   "ms_sign": 0.18,
+   "ms_verify": 0.29
+  },
   "inputs_generated": 1,
   "why": [
    "status: value 'partially_shipped' unknown to V1"
@@ -95,8 +145,8 @@
    }
   ],
   "rejected_by_v2": 0,
-  "seconds_analysis": 1.73,
-  "seconds": 6.69
+  "seconds_analysis": 2.54,
+  "seconds": 7.4
  },
  {
   "scenario": "S2_nullable_address",
@@ -125,6 +175,32 @@
   ],
   "manifest_v1": "2a275e7c872835d4b0473f3cc659d112ebf70243efdf2e86853c26774e72a757",
   "manifest_v2": "f3d954a2ba1bb558b1fbbd43e8380017fb98d15c16917c87bb646b3435fe0153",
+  "integrity": {
+   "leaves_v1": 13,
+   "leaves_v2": 14,
+   "root_v1": "06da8d3e9bc4905207e174036467f98e5afbf449a0103fd5916232a33b6c4338",
+   "root_v2": "2bf646d9c93030347ddfb0a723bb9153a17b7386049cf10a6da87265ac343f9d",
+   "changed_leaves": [
+    "artifact:orders/migrations/0002_alter_order_shipping_address.py",
+    "artifact:orders/models.py",
+    "artifact:orders/services.py",
+    "field:shipping_address"
+   ],
+   "removed_leaves": [],
+   "proof_hashes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "proofs_verified": true,
+   "tamper": {
+    "modified_manifest_rejected": true,
+    "modified_signature_rejected": true
+   },
+   "ms_sign": 0.19,
+   "ms_verify": 0.24
+  },
   "inputs_generated": 3,
   "why": [
    "shipping_address: null",
@@ -157,8 +233,8 @@
    }
   ],
   "rejected_by_v2": 0,
-  "seconds_analysis": 2.12,
-  "seconds": 6.61
+  "seconds_analysis": 2.56,
+  "seconds": 7.48
  },
  {
   "scenario": "S3_phone_e164",
@@ -193,6 +269,32 @@
   ],
   "manifest_v1": "2a275e7c872835d4b0473f3cc659d112ebf70243efdf2e86853c26774e72a757",
   "manifest_v2": "5878406ff14fb76840132f289b61c1c4ab0d67c31f92de1bd7034a0053ac266f",
+  "integrity": {
+   "leaves_v1": 13,
+   "leaves_v2": 14,
+   "root_v1": "06da8d3e9bc4905207e174036467f98e5afbf449a0103fd5916232a33b6c4338",
+   "root_v2": "25c3635b97edb0b1d8ad5e20b3c561dec4f51930ba6a6e1029988aaee2754549",
+   "changed_leaves": [
+    "artifact:orders/migrations/0002_alter_order_phone.py",
+    "artifact:orders/models.py",
+    "artifact:orders/services.py",
+    "field:phone"
+   ],
+   "removed_leaves": [],
+   "proof_hashes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "proofs_verified": true,
+   "tamper": {
+    "modified_manifest_rejected": true,
+    "modified_signature_rejected": true
+   },
+   "ms_sign": 0.19,
+   "ms_verify": 0.23
+  },
   "inputs_generated": 2,
   "why": [
    "phone: V2 format '+905000000000' rejected by V1 format",
@@ -224,8 +326,8 @@
    }
   ],
   "rejected_by_v2": 0,
-  "seconds_analysis": 2.65,
-  "seconds": 6.55
+  "seconds_analysis": 2.89,
+  "seconds": 7.8
  },
  {
   "scenario": "S4_amount_in_kurus",
@@ -247,6 +349,26 @@
   "new_migrations": [],
   "manifest_v1": "2a275e7c872835d4b0473f3cc659d112ebf70243efdf2e86853c26774e72a757",
   "manifest_v2": "c7096ee9eb35fd95642b77ab5f4ad788f4762dd6eb2a7794a622695c5ec91080",
+  "integrity": {
+   "leaves_v1": 13,
+   "leaves_v2": 13,
+   "root_v1": "06da8d3e9bc4905207e174036467f98e5afbf449a0103fd5916232a33b6c4338",
+   "root_v2": "b5aae6dec9ad51c48292f3858647885ab5899baab029d2123c129be462731049",
+   "changed_leaves": [
+    "artifact:orders/services.py"
+   ],
+   "removed_leaves": [],
+   "proof_hashes": [
+    4
+   ],
+   "proofs_verified": true,
+   "tamper": {
+    "modified_manifest_rejected": true,
+    "modified_signature_rejected": true
+   },
+   "ms_sign": 0.22,
+   "ms_verify": 0.26
+  },
   "inputs_generated": 1,
   "why": [
    "code_change (orders/services.py): typical record with non-zero values"
@@ -264,8 +386,8 @@
    }
   ],
   "rejected_by_v2": 0,
-  "seconds_analysis": 1.96,
-  "seconds": 5.71
+  "seconds_analysis": 2.68,
+  "seconds": 7.76
  },
  {
   "scenario": "S5_coupon_longer",
@@ -288,6 +410,30 @@
   ],
   "manifest_v1": "2a275e7c872835d4b0473f3cc659d112ebf70243efdf2e86853c26774e72a757",
   "manifest_v2": "5cafecaf36ea2c50534c5ff48ddf021b246fd47d14b169b6a4ad67193b26f74d",
+  "integrity": {
+   "leaves_v1": 13,
+   "leaves_v2": 14,
+   "root_v1": "06da8d3e9bc4905207e174036467f98e5afbf449a0103fd5916232a33b6c4338",
+   "root_v2": "1b064660a5ec59bfcaa4e9ad64a4c8ca087bd9db00c1557c9cde4ded02d59829",
+   "changed_leaves": [
+    "artifact:orders/migrations/0002_alter_order_coupon_code.py",
+    "artifact:orders/models.py",
+    "field:coupon_code"
+   ],
+   "removed_leaves": [],
+   "proof_hashes": [
+    4,
+    4,
+    4
+   ],
+   "proofs_verified": true,
+   "tamper": {
+    "modified_manifest_rejected": true,
+    "modified_signature_rejected": true
+   },
+   "ms_sign": 0.24,
+   "ms_verify": 0.27
+  },
   "inputs_generated": 2,
   "why": [
    "coupon_code: length 11 > V1 limit 10",
@@ -312,8 +458,8 @@
    }
   ],
   "rejected_by_v2": 0,
-  "seconds_analysis": 1.7,
-  "seconds": 5.47
+  "seconds_analysis": 2.79,
+  "seconds": 8.06
  },
  {
   "scenario": "S6_currency_not_null",
@@ -353,6 +499,32 @@
   ],
   "manifest_v1": "2a275e7c872835d4b0473f3cc659d112ebf70243efdf2e86853c26774e72a757",
   "manifest_v2": "4a1c93e28f4de52f546d10a39bd2358d4473b5c0b7bc94d70ef6525eab9392d8",
+  "integrity": {
+   "leaves_v1": 13,
+   "leaves_v2": 15,
+   "root_v1": "06da8d3e9bc4905207e174036467f98e5afbf449a0103fd5916232a33b6c4338",
+   "root_v2": "c9418898278d4cfc174c597ac0e7d5c008527a5d806669bf0974c49a8766e48e",
+   "changed_leaves": [
+    "artifact:orders/migrations/0002_order_currency.py",
+    "artifact:orders/models.py",
+    "artifact:orders/services.py",
+    "field:currency"
+   ],
+   "removed_leaves": [],
+   "proof_hashes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "proofs_verified": true,
+   "tamper": {
+    "modified_manifest_rejected": true,
+    "modified_signature_rejected": true
+   },
+   "ms_sign": 0.22,
+   "ms_verify": 0.24
+  },
   "inputs_generated": 2,
   "why": [
    "currency: new field with a value",
@@ -371,8 +543,8 @@
    }
   ],
   "rejected_by_v2": 0,
-  "seconds_analysis": 1.94,
-  "seconds": 6.15
+  "seconds_analysis": 2.45,
+  "seconds": 7.84
  },
  {
   "scenario": "S7_rename_note",
@@ -417,6 +589,34 @@
   ],
   "manifest_v1": "2a275e7c872835d4b0473f3cc659d112ebf70243efdf2e86853c26774e72a757",
   "manifest_v2": "bbebef48d084653ae7b001c8a8f216994b5e0e8175ed8d327477ff0aeb636fc4",
+  "integrity": {
+   "leaves_v1": 13,
+   "leaves_v2": 14,
+   "root_v1": "06da8d3e9bc4905207e174036467f98e5afbf449a0103fd5916232a33b6c4338",
+   "root_v2": "d8c38ab6db7001d475300e39d691fce81eaf42ef83525e054fcfe438ea35069b",
+   "changed_leaves": [
+    "artifact:orders/migrations/0002_rename_note.py",
+    "artifact:orders/models.py",
+    "artifact:orders/services.py",
+    "field:customer_note"
+   ],
+   "removed_leaves": [
+    "field:note"
+   ],
+   "proof_hashes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "proofs_verified": true,
+   "tamper": {
+    "modified_manifest_rejected": true,
+    "modified_signature_rejected": true
+   },
+   "ms_sign": 0.23,
+   "ms_verify": 0.24
+  },
   "inputs_generated": 1,
   "why": [
    "customer_note: new field (not in API), typical record"
@@ -466,7 +666,7 @@
    }
   ],
   "rejected_by_v2": 0,
-  "seconds_analysis": 1.33,
-  "seconds": 4.98
+  "seconds_analysis": 1.89,
+  "seconds": 6.24
  }
 ]

@@ -18,7 +18,7 @@
    "rules": [],
    "compat_rules": []
   },
-  "seconds": 1.07,
+  "seconds": 1.29,
   "A_detected": false
  },
  {
@@ -40,7 +40,7 @@
    "rules": [],
    "compat_rules": []
   },
-  "seconds": 0.97,
+  "seconds": 1.15,
   "A_detected": false
  },
  {
@@ -66,7 +66,7 @@
     "ban-drop-not-null"
    ]
   },
-  "seconds": 0.91,
+  "seconds": 1.23,
   "A_detected": true
  },
  {
@@ -88,7 +88,7 @@
    "rules": [],
    "compat_rules": []
   },
-  "seconds": 0.98,
+  "seconds": 1.18,
   "A_detected": false
  },
  {
@@ -110,7 +110,7 @@
    "rules": [],
    "compat_rules": []
   },
-  "seconds": 0.0,
+  "seconds": 0.01,
   "A_detected": false
  },
  {
@@ -141,7 +141,7 @@
     "changing-column-type"
    ]
   },
-  "seconds": 0.92,
+  "seconds": 1.19,
   "A_detected": true
  },
  {
@@ -170,7 +170,7 @@
    ],
    "compat_rules": []
   },
-  "seconds": 0.94,
+  "seconds": 1.19,
   "A_detected": true
  },
  {
@@ -200,7 +200,7 @@
     "renaming-column"
    ]
   },
-  "seconds": 1.1,
+  "seconds": 1.23,
   "A_detected": true
  }
 ]

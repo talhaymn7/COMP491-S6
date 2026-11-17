@@ -7,7 +7,7 @@
   "not_applicable": null,
   "finding_steps": [],
   "findings": [],
-  "seconds": 12.43
+  "seconds": 3.5
  },
  {
   "scenario": "S1_enum_new_value",
@@ -17,7 +17,7 @@
   "not_applicable": null,
   "finding_steps": [],
   "findings": [],
-  "seconds": 3.62
+  "seconds": 3.6
  },
  {
   "scenario": "S2_nullable_address",
@@ -27,7 +27,7 @@
   "not_applicable": null,
   "finding_steps": [],
   "findings": [],
-  "seconds": 3.68
+  "seconds": 3.94
  },
  {
   "scenario": "S3_phone_e164",
@@ -37,7 +37,7 @@
   "not_applicable": null,
   "finding_steps": [],
   "findings": [],
-  "seconds": 3.68
+  "seconds": 3.59
  },
  {
   "scenario": "S4_amount_in_kurus",
@@ -47,7 +47,7 @@
   "not_applicable": "no new migration",
   "finding_steps": [],
   "findings": [],
-  "seconds": 1.38
+  "seconds": 1.41
  },
  {
   "scenario": "S5_coupon_longer",
@@ -57,7 +57,7 @@
   "not_applicable": null,
   "finding_steps": [],
   "findings": [],
-  "seconds": 3.83
+  "seconds": 3.59
  },
  {
   "scenario": "S6_currency_not_null",
@@ -67,7 +67,7 @@
   "not_applicable": null,
   "finding_steps": [],
   "findings": [],
-  "seconds": 3.84
+  "seconds": 3.81
  },
  {
   "scenario": "S7_rename_note",
@@ -77,6 +77,6 @@
   "not_applicable": null,
   "finding_steps": [],
   "findings": [],
-  "seconds": 3.21
+  "seconds": 3.09
  }
 ]

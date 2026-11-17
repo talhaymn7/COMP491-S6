@@ -22,9 +22,9 @@ Ground truth confirmed for every scenario with a witness input (results/ground_t
 |---|---|---|---|---|---|
 | A1 django-migration-linter | 3 | 4 | 0 | 3/7 (43%) | (in A) |
 | A2 Squawk | 3 | 4 | 0 | 3/7 (43%) | (in A) |
-| A static (A1 or A2) | 4 | 3 | 0 | 4/7 (57%) | 6.9 |
-| B fixed-data rollback test | 4 | 3 | 0 | 4/7 (57%) | 32.6 |
-| C = A + B | 6 | 1 | 0 | 6/7 (86%) | 39.5 |
+| A static (A1 or A2) | 4 | 3 | 0 | 4/7 (57%) | 8.5 |
+| B fixed-data rollback test | 4 | 3 | 0 | 4/7 (57%) | 40.9 |
+| C = A + B | 6 | 1 | 0 | 6/7 (86%) | 49.4 |
 
 ## Method R: random, schema-based (Hypothesis), 20 generated inputs per run, 10 seeds
 
@@ -32,16 +32,16 @@ R is counted as detected when the majority of seeds detect the problem.
 
 | Scenario | Incompatible | Seeds detecting | Mean first detecting input | Mean inputs rejected by V2 | Time per run (s) |
 |---|---|---|---|---|---|
-| S0_safe_add_nullable | no | 0/10 | - | 0/20 | 7.4 |
-| S1_enum_new_value | **yes** | 10/10 | 7.3 | 0/20 | 6.8 |
-| S2_nullable_address | **yes** | 10/10 | 1 | 0/20 | 7.3 |
-| S3_phone_e164 | **yes** | 10/10 | 1 | 0/20 | 7.1 |
-| S4_amount_in_kurus | **yes** | 10/10 | 3 | 0/20 | 7.5 |
-| S5_coupon_longer | **yes** | 7/10 | 6.7 | 0/20 | 6.9 |
-| S6_currency_not_null | **yes** | 10/10 | 1 | 0/20 | 7.2 |
-| S7_rename_note | **yes** | 10/10 | 1 | 0/20 | 6.6 |
+| S0_safe_add_nullable | no | 0/10 | - | 0/20 | 8.8 |
+| S1_enum_new_value | **yes** | 10/10 | 7.3 | 0/20 | 8.8 |
+| S2_nullable_address | **yes** | 10/10 | 1 | 0/20 | 8.6 |
+| S3_phone_e164 | **yes** | 10/10 | 1 | 0/20 | 8.7 |
+| S4_amount_in_kurus | **yes** | 10/10 | 3 | 0/20 | 8.6 |
+| S5_coupon_longer | **yes** | 7/10 | 6.7 | 0/20 | 8.5 |
+| S6_currency_not_null | **yes** | 10/10 | 1 | 0/20 | 8.6 |
+| S7_rename_note | **yes** | 10/10 | 1 | 0/20 | 7.5 |
 
-R summary: detected (majority) 7/7, false positive 0, mean per-seed detection rate on incompatible scenarios 96%, control scenario flagged in 0/10 seeds, total time 568 s.
+R summary: detected (majority) 7/7, false positive 0, mean per-seed detection rate on incompatible scenarios 96%, control scenario flagged in 0/10 seeds, total time 680 s.
 
 ## Method P: change-aware data generation (proposed)
 
@@ -49,16 +49,18 @@ Deterministic: one run per scenario. Inputs are generated only for the elements 
 
 | Scenario | Incompatible | Change types found | Inputs generated | First detecting input | Detected | Rejected by V2 | Analysis (s) | Total (s) |
 |---|---|---|---|---|---|---|---|---|
-| S0_safe_add_nullable | no | code_change, structural_add_nullable | 2 | - | no | 0 | 2.0 | 6.2 |
-| S1_enum_new_value | **yes** | value_range_choices | 1 | 1 | **yes** | 0 | 1.7 | 6.7 |
-| S2_nullable_address | **yes** | code_change, null_absent | 3 | 1 | **yes** | 0 | 2.1 | 6.6 |
-| S3_phone_e164 | **yes** | code_change, format | 2 | 1 | **yes** | 0 | 2.6 | 6.5 |
-| S4_amount_in_kurus | **yes** | code_change | 1 | 1 | **yes** | 0 | 2.0 | 5.7 |
-| S5_coupon_longer | **yes** | value_range_length | 2 | 1 | **yes** | 0 | 1.7 | 5.5 |
-| S6_currency_not_null | **yes** | code_change, structural_add_not_null | 2 | 1 | **yes** | 0 | 1.9 | 6.2 |
-| S7_rename_note | **yes** | code_change, structural_add_not_null, structural_remove | 1 | 1 | **yes** | 0 | 1.3 | 5.0 |
+| S0_safe_add_nullable | no | code_change, structural_add_nullable | 2 | - | no | 0 | 2.5 | 7.3 |
+| S1_enum_new_value | **yes** | value_range_choices | 1 | 1 | **yes** | 0 | 2.5 | 7.4 |
+| S2_nullable_address | **yes** | code_change, null_absent | 3 | 1 | **yes** | 0 | 2.6 | 7.5 |
+| S3_phone_e164 | **yes** | code_change, format | 2 | 1 | **yes** | 0 | 2.9 | 7.8 |
+| S4_amount_in_kurus | **yes** | code_change | 1 | 1 | **yes** | 0 | 2.7 | 7.8 |
+| S5_coupon_longer | **yes** | value_range_length | 2 | 1 | **yes** | 0 | 2.8 | 8.1 |
+| S6_currency_not_null | **yes** | code_change, structural_add_not_null | 2 | 1 | **yes** | 0 | 2.5 | 7.8 |
+| S7_rename_note | **yes** | code_change, structural_add_not_null, structural_remove | 1 | 1 | **yes** | 0 | 1.9 | 6.2 |
 
-P summary: detected 7/7, false positive 0, inputs written by V2 per scenario 1-3 (total 14), mean first detecting input (detected scenarios) 1.0, total time 48 s.
+P summary: detected 7/7, false positive 0, inputs written by V2 per scenario 1-3 (total 14), mean first detecting input (detected scenarios) 1.0, total time 60 s.
+
+Manifest integrity (Merkle tree, RFC 6962 hashing; Ed25519 signature): leaves per version 13-15, changed leaves per scenario 1-4, inclusion proof length 3-4 hashes, all proofs verified: True, modified manifest rejected 8/8, modified signature rejected 8/8, mean sign 0.23 ms and verify 0.26 ms per scenario (two manifests).
 
 Ablation (P without tracking service/view code, contract fields only): detected 6/7, missed: S4_amount_in_kurus, false positive: none.
 
@@ -77,7 +79,7 @@ Same fixed data as B; forward migration, then reverse migration (schema rollback
 | S6_currency_not_null | **yes** | no | - |  |
 | S7_rename_note | **yes** | no | - |  |
 
-B' summary: detected 0/7, false positive 0, total time 36 s.
+B' summary: detected 0/7, false positive 0, total time 27 s.
 
 Sanity check (witness input added to the V2 data, not a method result): detected 3/7 (S1_enum_new_value, S2_nullable_address, S5_coupon_longer), false positive: none.
 
@@ -85,11 +87,11 @@ Sanity check (witness input added to the V2 data, not a method result): detected
 
 | Method | Detected | False positive | Inputs written by V2 per scenario | Deterministic | Total time (s) |
 |---|---|---|---|---|---|
-| A static | 4/7 | 0 | 0 (no run) | yes | 7 |
-| B fixed data | 4/7 | 0 | 3 | yes | 33 |
-| B' django-test-migrations | 0/7 | 0 | 3 | yes | 36 |
-| C = A + B | 6/7 | 0 | 3 | yes | 40 |
-| R random (20 inputs x 10 seeds) | 7/7 | 0 | 20 | no | 568 |
-| P change-aware | 7/7 | 0 | 1-3 | yes | 48 |
+| A static | 4/7 | 0 | 0 (no run) | yes | 8 |
+| B fixed data | 4/7 | 0 | 3 | yes | 41 |
+| B' django-test-migrations | 0/7 | 0 | 3 | yes | 27 |
+| C = A + B | 6/7 | 0 | 3 | yes | 49 |
+| R random (20 inputs x 10 seeds) | 7/7 | 0 | 20 | no | 680 |
+| P change-aware | 7/7 | 0 | 1-3 | yes | 60 |
 
 Missed even by C: S1_enum_new_value

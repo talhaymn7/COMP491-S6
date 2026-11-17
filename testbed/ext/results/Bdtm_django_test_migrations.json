@@ -7,7 +7,7 @@
   "not_applicable": null,
   "finding_steps": [],
   "findings": [],
-  "seconds": 6.26
+  "seconds": 3.81
  },
  {
   "scenario": "X1_product_name_shorter",
@@ -17,7 +17,7 @@
   "not_applicable": null,
   "finding_steps": [],
   "findings": [],
-  "seconds": 4.31
+  "seconds": 3.9
  },
  {
   "scenario": "X2_order_gift_wrap",
@@ -27,7 +27,7 @@
   "not_applicable": null,
   "finding_steps": [],
   "findings": [],
-  "seconds": 3.95
+  "seconds": 3.97
  },
  {
   "scenario": "X3_category_removed",
@@ -37,7 +37,7 @@
   "not_applicable": null,
   "finding_steps": [],
   "findings": [],
-  "seconds": 4.09
+  "seconds": 3.81
  },
  {
   "scenario": "E1_birth_year_range",
@@ -47,7 +47,7 @@
   "not_applicable": null,
   "finding_steps": [],
   "findings": [],
-  "seconds": 4.29
+  "seconds": 3.82
  },
  {
   "scenario": "E2_new_carrier",
@@ -57,7 +57,7 @@
   "not_applicable": null,
   "finding_steps": [],
   "findings": [],
-  "seconds": 3.83
+  "seconds": 3.76
  },
  {
   "scenario": "E3_price_with_vat",
@@ -67,7 +67,7 @@
   "not_applicable": "no new migration",
   "finding_steps": [],
   "findings": [],
-  "seconds": 1.66
+  "seconds": 1.57
  },
  {
   "scenario": "E4_coupon_rule_relaxed",
@@ -77,7 +77,7 @@
   "not_applicable": "no new migration",
   "finding_steps": [],
   "findings": [],
-  "seconds": 1.59
+  "seconds": 1.55
  },
  {
   "scenario": "E5_release_category_city",
@@ -87,7 +87,7 @@
   "not_applicable": null,
   "finding_steps": [],
   "findings": [],
-  "seconds": 3.94
+  "seconds": 4.0
  },
  {
   "scenario": "E6_sku_longer_digits",
@@ -97,7 +97,7 @@
   "not_applicable": null,
   "finding_steps": [],
   "findings": [],
-  "seconds": 4.0
+  "seconds": 4.35
  },
  {
   "scenario": "E7_tracking_nullable",
@@ -107,7 +107,7 @@
   "not_applicable": null,
   "finding_steps": [],
   "findings": [],
-  "seconds": 3.79
+  "seconds": 4.42
  },
  {
   "scenario": "E8_split_full_name",
@@ -127,6 +127,6 @@
     "error": "IntegrityError: column \"full_name\" of relation \"orders_customer\" contains null values"
    }
   ],
-  "seconds": 3.84
+  "seconds": 3.7
  }
 ]

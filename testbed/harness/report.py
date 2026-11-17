@@ -107,8 +107,21 @@ def main():
                   f"mean first detecting input (detected scenarios) "
                   f"{sum(p['first_detecting_input'] for p in inc if p['P_detected']) / max(1, sum(1 for p in inc if p['P_detected'])):.1f}, "
                   f"total time {sum(p['seconds'] for p in P.values()):.0f} s."]
+        I = [p["integrity"] for p in P.values() if p.get("integrity")]
+        if I:
+            n_t = len(I)
+            lines += ["", "Manifest integrity (Merkle tree, RFC 6962 hashing; Ed25519 signature): "
+                      f"leaves per version {min(i['leaves_v2'] for i in I)}-{max(i['leaves_v2'] for i in I)}, "
+                      f"changed leaves per scenario {min(len(i['changed_leaves']) for i in I)}-"
+                      f"{max(len(i['changed_leaves']) for i in I)}, inclusion proof length "
+                      f"{min(min(i['proof_hashes'] or [0]) for i in I)}-{max(max(i['proof_hashes'] or [0]) for i in I)} hashes, "
+                      f"all proofs verified: {all(i['proofs_verified'] for i in I)}, "
+                      f"modified manifest rejected {sum(i['tamper']['modified_manifest_rejected'] for i in I)}/{n_t}, "
+                      f"modified signature rejected {sum(i['tamper']['modified_signature_rejected'] for i in I)}/{n_t}, "
+                      f"mean sign {sum(i['ms_sign'] for i in I) / n_t:.2f} ms and verify {sum(i['ms_verify'] for i in I) / n_t:.2f} ms "
+                      "per scenario (two manifests)."]
         if PN:
-            missed = [s for s, p in PN.items() if p["truth"] and not p["P_detected"]]
+            missed =[s for s, p in PN.items() if p["truth"] and not p["P_detected"]]
             fpn = [s for s, p in PN.items() if not p["truth"] and p["P_detected"]]
             lines += ["", "Ablation (P without tracking service/view code, contract fields only): "
                       f"detected {sum(1 for p in PN.values() if p['truth'] and p['P_detected'])}/{pos}, "

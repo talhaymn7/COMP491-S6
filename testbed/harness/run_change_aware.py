@@ -24,6 +24,7 @@ from hypothesis import HealthCheck, find, settings
 from hypothesis import strategies as st
 
 from common import RESULTS, V1_DIR, Timer, build_v2, manage, save
+from manifest_crypto import new_key, protect
 from run_fixed import FIXED_INPUTS, rollback_cycle
 from run_random import first_detecting_input
 from suite import SCENARIOS
@@ -179,6 +180,9 @@ def generate(changes):
 
 def main():
     rows = []
+    key_dir = RESULTS / "work" / TAG
+    key_dir.mkdir(parents=True, exist_ok=True)
+    key, pub = new_key(key_dir)
     for s in SCENARIOS:
         work = RESULTS / "work" / TAG / s["id"]
         work.mkdir(parents=True, exist_ok=True)
@@ -187,6 +191,8 @@ def main():
                 app_v2 = build_v2(s)
                 m1, f1 = manifest(V1_DIR, work, "v1")
                 m2, f2 = manifest(app_v2, work, "v2")
+                # sign both manifests and verify them before any test is generated
+                integrity = protect(m1, m2, s["id"], key, pub, work)
                 changes, new_migrations = classify(m1, f1, m2, f2)
                 generated = generate(changes)
             (work / "generated.json").write_text(json.dumps(generated, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -198,6 +204,7 @@ def main():
             "changes": changes, "change_types": sorted({c["type"] for c in changes}),
             "new_migrations": new_migrations,
             "manifest_v1": m1["manifest_sha256"], "manifest_v2": m2["manifest_sha256"],
+            "integrity": integrity,
             "inputs_generated": len(generated), "why": [g["why"] for g in generated],
             "first_detecting_input": first_detecting_input(probe, written_v2),
             "finding_steps": sorted({x["step"] for x in probe["findings"]}),
@@ -207,7 +214,10 @@ def main():
         rows.append(row)
         print(f"{s['id']:<24} truth={s['rollback_incompatible']!s:<5} detected={row['P_detected']!s:<5} "
               f"changes={row['change_types']} inputs={len(generated)} first={row['first_detecting_input']} "
-              f"rejected={len(rejected)} ({total.seconds:.1f}s, analysis {analysis.seconds:.1f}s)")
+              f"rejected={len(rejected)} ({total.seconds:.1f}s, analysis {analysis.seconds:.1f}s) "
+              f"leaves={integrity['leaves_v2']} changed_leaves={len(integrity['changed_leaves'])} "
+              f"proofs_ok={integrity['proofs_verified']} tamper={integrity['tamper']} "
+              f"sign={integrity['ms_sign']}ms verify={integrity['ms_verify']}ms")
     save("P_change_aware.json" if TRACK_CODE else "P_change_aware_nocode.json", rows)
 
 

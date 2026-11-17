@@ -20,7 +20,7 @@
    ],
    "compat_rules": []
   },
-  "seconds": 1.05,
+  "seconds": 1.2,
   "A_detected": false
  },
  {
@@ -51,7 +51,7 @@
     "changing-column-type"
    ]
   },
-  "seconds": 0.88,
+  "seconds": 1.16,
   "A_detected": true
  },
  {
@@ -75,7 +75,7 @@
    ],
    "compat_rules": []
   },
-  "seconds": 0.86,
+  "seconds": 1.16,
   "A_detected": false
  },
  {
@@ -97,7 +97,7 @@
    "rules": [],
    "compat_rules": []
   },
-  "seconds": 0.84,
+  "seconds": 1.17,
   "A_detected": false
  },
  {
@@ -119,7 +119,7 @@
    "rules": [],
    "compat_rules": []
   },
-  "seconds": 0.86,
+  "seconds": 1.17,
   "A_detected": false
  },
  {
@@ -141,7 +141,7 @@
    "rules": [],
    "compat_rules": []
   },
-  "seconds": 0.86,
+  "seconds": 1.18,
   "A_detected": false
  },
  {
@@ -163,7 +163,7 @@
    "rules": [],
    "compat_rules": []
   },
-  "seconds": 0.0,
+  "seconds": 0.01,
   "A_detected": false
  },
  {
@@ -185,7 +185,7 @@
    "rules": [],
    "compat_rules": []
   },
-  "seconds": 0.0,
+  "seconds": 0.01,
   "A_detected": false
  },
  {
@@ -216,7 +216,7 @@
     "changing-column-type"
    ]
   },
-  "seconds": 0.88,
+  "seconds": 1.15,
   "A_detected": true
  },
  {
@@ -238,7 +238,7 @@
    "rules": [],
    "compat_rules": []
   },
-  "seconds": 1.03,
+  "seconds": 1.14,
   "A_detected": false
  },
  {
@@ -264,7 +264,7 @@
     "ban-drop-not-null"
    ]
   },
-  "seconds": 0.84,
+  "seconds": 1.18,
   "A_detected": true
  },
  {
@@ -297,7 +297,7 @@
     "ban-drop-column"
    ]
   },
-  "seconds": 0.86,
+  "seconds": 1.16,
   "A_detected": true
  }
 ]
